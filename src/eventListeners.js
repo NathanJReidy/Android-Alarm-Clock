@@ -1,0 +1,41 @@
+// Event listener for on/off button (active true or false)
+
+
+// Event listener for time div (brings up main clock screen to change the alarm time)
+
+
+// Event listener for down arrow (brings up extra card appended at the bottom of main card)
+
+
+// Event listener for up arrow (hides the extra card appended)
+
+
+// Event listener for delete button (deletes the whole alarm object from the array and re-loads the page)
+
+
+// Event listener for fixed plus button, to add a new alarm
+
+
+// Event listener for hours div in choosing alarm time. Shows numbers 1-12.
+
+// Event listener for each of the numbers 1-12. 
+
+
+// Event listener for minutes div in choosing alarm time. Shows numbers 00-59 progressively depending on clicked position. 
+
+// Event listener for each of the numbers 00-59. 
+
+
+// Event listener for period div (am)
+
+
+// Event listener for period div (pm)
+
+
+// Event listener for 'cancel' <p> button. When clicked, hides add new alarm screen.
+
+
+// Event listener for 'ok' <p> button. When clicked, pushes new alarm object to array and hides add new alarm screen. 
+
+
+// Event listener for modal overlay. When clicked, hides add new alarm screen. 
