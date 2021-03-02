@@ -1,7 +1,7 @@
 // Event listener for on/off button (active true or false)
 
 
-// Event listener for time div (brings up main clock screen to change the alarm time)
+// Event listener for time div (brings up main clock screen to update the alarm time). Send to update function to change the specific object in the array. Then remove everything on page then reload the page.
 
 
 // Event listener for down arrow (brings up extra card appended at the bottom of main card)

@@ -1,11 +1,20 @@
 let allAlarms = [];
 
-function createAlarm(time, period) {
+function createAlarm(hours, minutes, period) {
     allAlarms.push({
-        time,
+        hours,
+        minutes,
         period,
         active: true,
     })
 }
+
+
+// Function to update alarm object/array with new time
+
+
+// 
+
+
 
 export { allAlarms } 
