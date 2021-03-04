@@ -46,13 +46,50 @@ function hideWhiteAlarmDay(index) {
 }
 
 
-
-
-
-
 // Show extended card (when down arrow is clicked)
+function showExtendedCard(index) {
+    let extendedCard = document.querySelectorAll(".extendedCard");
+    extendedCard[index].style.display = 'flex';
+}
 
 // Hide extended card (when up arrow is clicked)
+function hideExtendedCard(index) {
+    let extendedCard = document.querySelectorAll(".extendedCard");
+    extendedCard[index].style.display = 'none';
+}
+
+// Hide bottom border of alarm card
+function hideAlarmCardBorder(index) {
+    let alarmCard = document.querySelectorAll(".alarmCard");
+    alarmCard[index].style.borderBottom = "none";
+}
+
+// Show bottom border of alarm card
+function showAlarmCardBorder(index) {
+    let alarmCard = document.querySelectorAll(".alarmCard");
+    alarmCard[index].style = "border-bottom: 1px solid gray;";
+}
+
+// Change background colour of alarm card to gray
+function changeAlarmCardBg(index) {
+    let alarmCard = document.querySelectorAll(".alarmCard");
+    alarmCard[index].style = "background-color: rgb(27, 27, 27)";
+
+}
+
+// Change background colour of alarm card to black again
+function hideChangeAlarmCardBg(index) {
+    let alarmCard = document.querySelectorAll(".alarmCard");
+    alarmCard[index].style = "background-color: none";
+}
+
+// Hide (i.e. delete) alarm card from screen
+function deleteAlarmCard(index) {
+    let alarmCard = document.querySelectorAll(".alarmCard");
+    alarmCard[index].style.display = 'none';
+}
+
+
 
 
 
@@ -92,4 +129,4 @@ function hideWhiteAlarmDay(index) {
 
 
 
-export { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay }
+export { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, changeAlarmCardBg, hideExtendedCard, hideChangeAlarmCardBg, showAlarmCardBorder, deleteAlarmCard }
