@@ -27,7 +27,7 @@ body {
   flex-direction: row;
   height: 100vh;
   width: 100vw;
-  background-color: black;
+  background-color: rgb(15, 14, 14);
   font-family: sans-serif;
   font-size: medium;
   font-style: normal;
@@ -47,15 +47,15 @@ body {
     flex-direction: column;
     height: 100vh;
     width: 100vw;
-
     padding-right: 1rem;
     padding-left: 1rem;
+    overflow-y: auto;
 
 }
 
 .headerBar {
     position: fixed;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(15, 14, 14);
     height: 10%;
     width: 100%;
     top: 0%;
@@ -110,6 +110,8 @@ body {
     font-style: normal;
     font-weight: 500;
     color: gray;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 
 }
 
@@ -119,13 +121,45 @@ body {
     justify-content: space-between;
     align-items: center;
     padding-top: 0.5rem;
-    /* padding-bottom: 0.25rem; */
+
+    height: 3rem;
 
     font-size: xx-large;
     font-style: normal;
     font-weight: 500;
 
 }
+
+.onBtn {
+    display: flex;
+    flex-direction: row;
+    height: 3rem;
+    width: 6rem;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.longSliderGray {
+    display: flex;
+    flex-direction: row;
+    height: 1rem;
+    width: 2rem;
+    border-radius: 0.75rem;
+    background-color: rgb(104, 100, 100);
+}
+
+.roundSliderGray {
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 9999px;
+    background-color: rgb(194, 183, 183);
+    z-index: 10;
+    position: fixed;
+    margin-right: 1rem;
+}
+
+
+
 
 #alarmBottomSection {
     display: flex;
@@ -170,7 +204,7 @@ body {
     position: fixed;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(41, 34, 34);
+    background-color: rgb(46, 46, 46);
     height: 10%;
     width: 100%;
     bottom: 0%;
@@ -246,3 +280,4 @@ body {
     transform: scale(1.5);
 
 }
+
