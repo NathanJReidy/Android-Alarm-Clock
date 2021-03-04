@@ -1,4 +1,4 @@
-import { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, changeAlarmCardBg, hideExtendedCard, hideChangeAlarmCardBg, showAlarmCardBorder, deleteAlarmCard } from './DOMchanges.js'
+import { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, changeAlarmCardBg, hideExtendedCard, hideChangeAlarmCardBg, showAlarmCardBorder, deleteAlarmCard, showOverlay, hideOverlay } from './DOMchanges.js'
 
 
 // Event listener for off button (i.e. when clicked it turns on)
@@ -113,10 +113,27 @@ deleteText.forEach((btn) => {
 })
 
 
-
-
-
 // Event listener for fixed plus button, to add a new alarm
+let addAlarmBtn = document.querySelector(".addAlarmBtn");
+addAlarmBtn.addEventListener("click", () => {
+    // Show overlay 
+    showOverlay();
+
+    // Show modal card 
+
+
+})
+
+// Event listener for closing overlay when it is click
+let overlay = document.querySelector(".overlay");
+overlay.addEventListener("click", () => {
+    // Hide overlay
+    hideOverlay();
+
+    // Hide modal card
+
+})
+
 
 
 // Event listener for hours div in choosing alarm time. Shows numbers 1-12.

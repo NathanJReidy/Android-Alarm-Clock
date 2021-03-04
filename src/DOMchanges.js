@@ -89,13 +89,18 @@ function deleteAlarmCard(index) {
     alarmCard[index].style.display = 'none';
 }
 
-
-
-
-
 // Show overlay (black background, with opacity)
+function showOverlay() {
+    let overlay = document.querySelector(".overlay");
+    overlay.style.display = "flex";
+}
 
 // Hide overlay 
+function hideOverlay() {
+    let overlay = document.querySelector(".overlay");
+    overlay.style.display = "none";
+}
+
 
 // Show modal card (when adding or updating an alarm). Pass an index into this function so that you can link the datasetValue of the clicked alarm number you want to update (on the main screen) to the automatically displayed alarm number on the modal card.
 
@@ -129,4 +134,4 @@ function deleteAlarmCard(index) {
 
 
 
-export { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, changeAlarmCardBg, hideExtendedCard, hideChangeAlarmCardBg, showAlarmCardBorder, deleteAlarmCard }
+export { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, changeAlarmCardBg, hideExtendedCard, hideChangeAlarmCardBg, showAlarmCardBorder, deleteAlarmCard, showOverlay, hideOverlay }

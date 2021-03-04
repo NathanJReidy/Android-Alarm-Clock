@@ -383,3 +383,13 @@ body {
     font-weight: 700;
     cursor: pointer;
 }
+
+.overlay {
+    display: none;
+    position: fixed;
+    z-index: 20;
+    background-color: rgb(0, 0, 0);
+    opacity: 60%;
+    height: 100%;
+    width: 100%;
+}
