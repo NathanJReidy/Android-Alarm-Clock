@@ -142,3 +142,76 @@ body {
     width: 32px;
 
 }
+
+.addAlarmBtn {
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9999px;
+    background-color: rgb(75, 127, 240);
+    border: none;
+    color: black;
+    bottom: 6rem;
+    right: 50%;
+    height: 48px;
+    width: 48px;
+    cursor: pointer;
+    font-size: x-large;
+
+}
+
+.footerBar {
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(41, 34, 34);
+    height: 7%;
+    width: 100%;
+    bottom: 0%;
+}
+
+.flexFooterContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.alarmContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 20%;
+}
+
+.clockContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 20%;
+}
+
+.timerContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 20%;
+}
+
+.stopwatchContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 20%;
+}
+
+.bedtimeContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 20%;
+}
+
