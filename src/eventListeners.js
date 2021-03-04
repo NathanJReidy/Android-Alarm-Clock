@@ -1,4 +1,16 @@
 // Event listener for on/off button (active true or false)
+let onBtns = document.querySelectorAll(".onBtn");
+onBtns.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+        let datasetValue = e.target.dataset.value;
+
+        // Function that shows blue on btn
+
+        // Function that shows blue time
+
+        // Function that shows white 'tomorrow'
+    })
+})
 
 
 // Event listener for time div (brings up main clock screen to update the alarm time). Send to update function to change the specific object in the array. Then remove everything on page then reload the page.

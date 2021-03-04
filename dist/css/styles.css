@@ -32,7 +32,7 @@ body {
   font-size: medium;
   font-style: normal;
   font-weight: 600;
-  color: white;
+  color: whitesmoke;
 }
 
 /* include border and padding in element width and height */
@@ -130,8 +130,13 @@ body {
 
 }
 
+.timeBlue {
+    color: rgb(75, 127, 240);
+}
+
+
 .onBtn {
-    display: flex;
+    display: none;
     flex-direction: row;
     height: 3rem;
     width: 6rem;
@@ -158,6 +163,38 @@ body {
     margin-right: 1rem;
 }
 
+.offBtn {
+    display: flex;
+    flex-direction: row;
+    height: 3rem;
+    width: 6rem;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.longSliderBlue {
+    display: flex;
+    flex-direction: row;
+    height: 1rem;
+    width: 2rem;
+    border-radius: 0.75rem;
+    background-color: rgb(50, 52, 167);
+    margin-right: 0.5rem;
+}
+
+.roundSliderBlue {
+
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 9999px;
+    background-color:  rgb(75, 127, 240);
+    z-index: 10;
+    position: fixed;
+}
+
+
+
+
 
 
 
@@ -173,10 +210,14 @@ body {
 
 }
 
+.alarmDayWhite {
+    color: whitesmoke;
+}
+
 #downArrow {
     font-weight: 700;
     font-size: small;
-    color: white;
+    color: whitesmoke;
     height: 24px;
     width: 32px;
     cursor: pointer;
