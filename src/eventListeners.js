@@ -1,16 +1,46 @@
-// Event listener for on/off button (active true or false)
-let onBtns = document.querySelectorAll(".onBtn");
-onBtns.forEach((btn) => {
+import { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay } from './DOMchanges.js'
+
+
+// Event listener for off button (i.e. when clicked it turns on)
+let roundSliderGray= document.querySelectorAll(".roundSliderGray");
+roundSliderGray.forEach((btn) => {
     btn.addEventListener("click", (e) => {
-        let datasetValue = e.target.dataset.value;
+        let datasetValue = e.target.parentNode.parentNode.parentNode.dataset.value;
+        console.log(datasetValue);
 
         // Function that shows blue on btn
+        showBlueOnBtn(datasetValue);
 
         // Function that shows blue time
+        showBlueTime(datasetValue);
 
         // Function that shows white 'tomorrow'
+        showWhiteAlarmDay(datasetValue);
     })
 })
+
+// Event listener for on button (i.e. when clicked it turns off)
+let roundSliderBlue= document.querySelectorAll(".roundSliderBlue");
+roundSliderBlue.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+        let datasetValue = e.target.parentNode.parentNode.parentNode.dataset.value;
+        console.log(datasetValue);
+
+        // Function that shows blue on btn
+        hideBlueOnBtn(datasetValue);
+
+        // Function that shows blue time
+        hideBlueTime(datasetValue);
+
+        // Function that shows white 'tomorrow'
+        hideWhiteAlarmDay(datasetValue);
+    })
+})
+
+
+
+
+
 
 
 // Event listener for time div (brings up main clock screen to update the alarm time). Send to update function to change the specific object in the array. Then remove everything on page then reload the page.

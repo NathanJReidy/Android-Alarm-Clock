@@ -30,15 +30,21 @@ function hideBlueOnBtn(index) {
     onBtn[index].style.display = 'none';
     offBtn[index].style.display = 'flex';
 }
+
 // When on (active) button is clicked, change the 'tomorrow' text class to white. 
+function showWhiteAlarmDay(index) {
+    let alarmDay = document.querySelectorAll(".alarmDay");
 
+    alarmDay[index].style.color = "whitesmoke";
+}
 
+// When off (active false) button is clicked, change the 'tomorrow' text class back to gray. 
+function hideWhiteAlarmDay(index) {
+    let alarmDay = document.querySelectorAll(".alarmDay");
 
+    alarmDay[index].style.color = "inherit";
+}
 
-
-
-
-// When off (active false) button is clicked, change the time div to normal gray colour. 
 
 
 
@@ -82,3 +88,8 @@ function hideBlueOnBtn(index) {
 // Hide minutes clock (numbers 00-59)
 
  
+
+
+
+
+export { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay }

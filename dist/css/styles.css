@@ -142,6 +142,7 @@ body {
     width: 6rem;
     justify-content: flex-end;
     align-items: center;
+    
 }
 
 .longSliderGray {
@@ -161,6 +162,7 @@ body {
     z-index: 10;
     position: fixed;
     margin-right: 1rem;
+    cursor: pointer;
 }
 
 .offBtn {
@@ -170,6 +172,7 @@ body {
     width: 6rem;
     justify-content: flex-end;
     align-items: center;
+    
 }
 
 .longSliderBlue {
@@ -190,6 +193,7 @@ body {
     background-color:  rgb(75, 127, 240);
     z-index: 10;
     position: fixed;
+    cursor: pointer;
 }
 
 
@@ -205,8 +209,8 @@ body {
     align-items: center;
     /* padding-top: 0.5rem; */
     padding-bottom: 0.5rem;
-    font-weight: 700;
-    font-size: small;
+    font-weight: 600;
+    font-size: medium;
 
 }
 
@@ -319,6 +323,56 @@ body {
 
 .footerIcons {
     transform: scale(1.5);
+}
+
+.extendedCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+    border-top: 1px solid grey;
+}
+
+.deleteCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* width: 5rem; */
+    color: whitesmoke;
+    height: 100%;
 
 }
 
+.deleteIcon {
+    display: flex;
+    flex-direction: row;
+    margin-right: 1.75rem;
+    width: 2rem;
+    cursor: pointer;
+}
+
+.deleteText {
+    cursor: pointer;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    font-size: medium;
+}
+
+.upArrow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+}
+
+
+.upIcon {
+    color: whitesmoke;
+    height: 28px;
+    width: 32px;
+    font-size: small;
+    font-weight: 700;
+    cursor: pointer;
+}
