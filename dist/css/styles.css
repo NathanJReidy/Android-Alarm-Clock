@@ -402,8 +402,8 @@ body {
     position: fixed;
     z-index: 30;
     left: 15%;
-    top: 11%;
-    height: 60%;
+    top: 16%;
+    height: 55%;
     width: 70%;
     background-color: rgb(32, 32, 32);
 }
@@ -434,11 +434,27 @@ body {
     width: 100%;
     justify-content: center;
     align-items: center;
+    
 }
+
+/* #clockCenter {
+    position: fixed;
+
+    height: 2rem;
+    width: 2rem;
+    border-radius: 9999px;
+    background-color: whitesmoke;
+    left: 50%;
+    top: 45%;
+
+} */
 
 .hourNumber div{
     position: fixed;
-    top: 21rem;
+    left:50%;
+    transform: translate(-50%, 0);
+    top: 23rem;
+
 }
 
 .hourNumber div:nth-child(1){
@@ -485,4 +501,16 @@ body {
 
 .hourNumber div:nth-child(12){
     transform: rotate(330deg) translateY(-100px);
+}
+
+.hourDigit {
+    display: flex;
+    flex-direction: row;
+    border-radius: 9999px;
+    background-color: rgb(10, 111, 226);
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    width: 2rem;
+
 }
