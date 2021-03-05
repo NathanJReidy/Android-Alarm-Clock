@@ -64,31 +64,33 @@ body {
 .headerBarContainer {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
 }
 
 #alarmText {
     display: flex;
     flex-direction: row;
-    width: 50%;
-    height: 100%;
-    justify-content: flex-end;
-    align-items: center;
 }
 
 #iconText {
-    display: flex;
-    flex-direction: row;
-    width: 50%;
-    height: 100%;
-    justify-content: flex-end;
-    align-items: center;
+    /* display: flex; */
+    position: fixed;
+    right: 2rem;
+    top: 1.75rem;
+
+    /* flex-direction: row;
+    justify-self: flex-end; */
+
+
 }
 
 #verticalDots {
-    height: 3%;
-    width: 3%;
-    margin-right: 2rem;
-    margin-top: 0.5rem;
+    color: whitesmoke;
+    height: 28px;
+    width: 32px;
     cursor: pointer;
 }
 
@@ -99,6 +101,7 @@ body {
     height: 100%;
     padding: 1rem;
     margin-top: 3rem;
+    /* margin-bottom: 24rem; */
 }
 
 .alarmCard {
@@ -244,9 +247,10 @@ body {
     border: none;
     color: black;
     bottom: 8rem;
-    right: 50%;
-    height: 48px;
-    width: 48px;
+    height: 3.5rem;
+    width: 3.5rem;
+    left:50%;
+    transform: translate(-50%, 0);
     cursor: pointer;
     font-size: x-large;
     outline: none;
@@ -392,4 +396,14 @@ body {
     opacity: 60%;
     height: 100%;
     width: 100%;
+}
+
+.modalFixed {
+    position: fixed;
+    z-index: 30;
+    left: 15%;
+    top: 11%;
+    height: 60%;
+    width: 70%;
+    background-color: rgb(32, 32, 32);
 }
