@@ -401,10 +401,10 @@ body {
 .modalFixed {
     position: fixed;
     z-index: 30;
-    left: 15%;
+    left: 10%;
     top: 16%;
     height: 55%;
-    width: 70%;
+    width: 80%;
     background-color: rgb(32, 32, 32);
 }
 
@@ -434,10 +434,10 @@ body {
     width: 100%;
     justify-content: center;
     align-items: center;
-    
+
 }
 
-/* #clockCenter {
+#clockCenter {
     position: fixed;
 
     height: 2rem;
@@ -446,14 +446,13 @@ body {
     background-color: whitesmoke;
     left: 50%;
     top: 45%;
+    transform: translate(-50%, 0);
 
-} */
+}
 
 .hourNumber div{
     position: fixed;
-    left:50%;
-    transform: translate(-50%, 0);
-    top: 23rem;
+    cursor: pointer;
 
 }
 
