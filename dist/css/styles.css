@@ -443,7 +443,7 @@ body {
     height: 2rem;
     width: 2rem;
     border-radius: 9999px;
-    background-color: whitesmoke;
+    background-color: none;
     left: 50%;
     top: 45%;
     transform: translate(-50%, 0);
