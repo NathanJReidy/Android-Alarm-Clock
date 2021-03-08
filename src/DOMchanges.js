@@ -89,9 +89,27 @@ function hideChangeAlarmCardBg(el) {
 // CORRECT Hide (i.e. delete) alarm card from screen
 function deleteAlarmCard(el) {
     if (el.classList.contains('deleteIcon') || el.classList.contains('deleteText')) {
-        el.parentElement.parentElement.parentElement.style.display = 'none';
+        // el.parentElement.parentElement.parentElement.style.display = 'none';
+        el.parentElement.parentElement.parentElement.remove();
     }
 }
+
+// CORRECT Hide down icon 
+function hideDownIcon(el) {
+    if (el.classList.contains('downIcon')) {
+        el.parentElement.style.display = 'none';
+    }
+}
+
+// CORRECT Show down icon
+function showDownIcon(el) {
+    if (el.classList.contains('upIcon')) {
+        el.parentElement.parentElement.previousElementSibling.children[1].style.display = 'flex';
+        console.log("SHOW DOWN ICON RUNS");
+        console.log(el.parentElement.parentElement.previousElementSibling.children[1]);
+    }
+}
+
 
 
 
@@ -141,4 +159,4 @@ function hideOverlay() {
 
 
 
-export { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, changeAlarmCardBg, hideExtendedCard, hideChangeAlarmCardBg, showAlarmCardBorder, deleteAlarmCard, showOverlay, hideOverlay }
+export { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, changeAlarmCardBg, hideExtendedCard, hideChangeAlarmCardBg, showAlarmCardBorder, deleteAlarmCard, showOverlay, hideOverlay, hideDownIcon, showDownIcon }

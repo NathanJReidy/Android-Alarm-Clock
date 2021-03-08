@@ -229,6 +229,7 @@ body {
 }
 
 #downArrow {
+    display: flex;
     font-weight: 700;
     font-size: small;
     color: whitesmoke;

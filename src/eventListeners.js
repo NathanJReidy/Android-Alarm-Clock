@@ -1,4 +1,4 @@
-import { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, changeAlarmCardBg, hideExtendedCard, hideChangeAlarmCardBg, showAlarmCardBorder, deleteAlarmCard, showOverlay, hideOverlay } from './DOMchanges.js'
+import { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, changeAlarmCardBg, hideExtendedCard, hideChangeAlarmCardBg, showAlarmCardBorder, deleteAlarmCard, showOverlay, hideOverlay, hideDownIcon, showDownIcon } from './DOMchanges.js'
 
 
 
@@ -43,6 +43,9 @@ alarmsBody.addEventListener("click", (e) => {
         // Hide alarm card bottom border
         hideAlarmCardBorder(element);
 
+        // Hide down icon 
+        hideDownIcon(element);
+
     }
 
     // Event listener for up arrow icon to hide extended card
@@ -56,12 +59,15 @@ alarmsBody.addEventListener("click", (e) => {
         // Show alarm card bottom border again
         showAlarmCardBorder(element);
 
+        // Show down icon
+        showDownIcon(element);
+
     }
 
     // Event listener for delete button (deletes the whole alarm object from the array and re-loads the page)
     // We will have one event listener for the trash icon, and a separate event listener for the delete text.
     else if (element.classList.contains('deleteIcon') || element.classList.contains('deleteText')) {
-        // Delete alarm object form array
+        // Delete alarm object from array
         
 
 
