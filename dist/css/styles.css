@@ -400,6 +400,7 @@ body {
 }
 
 .modalFixed {
+    display: none;
     position: fixed;
     z-index: 30;
     left: 10%;

@@ -1,4 +1,4 @@
-import { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, changeAlarmCardBg, hideExtendedCard, hideChangeAlarmCardBg, showAlarmCardBorder, deleteAlarmCard, showOverlay, hideOverlay, hideDownIcon, showDownIcon } from './DOMchanges.js'
+import { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, changeAlarmCardBg, hideExtendedCard, hideChangeAlarmCardBg, showAlarmCardBorder, deleteAlarmCard, showOverlay, hideOverlay, hideDownIcon, showDownIcon, showModalCard, hideModalCard } from './DOMchanges.js'
 
 
 
@@ -95,7 +95,7 @@ addAlarmBtn.addEventListener("click", () => {
     showOverlay();
 
     // Show modal card 
-
+    showModalCard();
 
 })
 
@@ -106,6 +106,7 @@ overlay.addEventListener("click", () => {
     hideOverlay();
 
     // Hide modal card
+    hideModalCard();
 
 })
 

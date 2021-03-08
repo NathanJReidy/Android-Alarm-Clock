@@ -128,8 +128,17 @@ function hideOverlay() {
 
 
 // Show modal card (when adding or updating an alarm). Pass an index into this function so that you can link the datasetValue of the clicked alarm number you want to update (on the main screen) to the automatically displayed alarm number on the modal card.
+function showModalCard() {
+    let modalCard = document.querySelector(".modalFixed");
+    modalCard.style.display = 'flex';
+}
 
 // Hide modal card (when clicking overlay, clicking cancel, or clicking ok)
+function hideModalCard() {
+    let modalCard = document.querySelector(".modalFixed");
+    modalCard.style.display = 'none';
+}
+
 
 // Have a function for choosing the correct default clock to display when the user tries to edit/update the alarm time. e.g. showCorrectClock(index), then based on whether that indexed alarm is am or pm, display the correct starting position in terms of whether you show the 1-12 number block or 00-59 number clock.
 
@@ -159,4 +168,4 @@ function hideOverlay() {
 
 
 
-export { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, changeAlarmCardBg, hideExtendedCard, hideChangeAlarmCardBg, showAlarmCardBorder, deleteAlarmCard, showOverlay, hideOverlay, hideDownIcon, showDownIcon }
+export { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, changeAlarmCardBg, hideExtendedCard, hideChangeAlarmCardBg, showAlarmCardBorder, deleteAlarmCard, showOverlay, hideOverlay, hideDownIcon, showDownIcon, showModalCard, hideModalCard }
