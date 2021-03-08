@@ -205,6 +205,7 @@ cancel.addEventListener("click", () => {
 let ok = document.querySelector(".ok");
 ok.addEventListener("click", () => {
     // Create new alarm card object in array
+    // i.e. extract the values from inputAlarmTimeHour and inputAlarmTimeMinutes as well as an if statement for whether AM or PM style.display is white (i.e. selected)
     
 
 
