@@ -518,7 +518,17 @@ body {
     justify-content: center;
     align-items: center;
     
+}
 
+.minutesClock {
+    /* display: flex; */
+    display: none;
+    flex-direction: row;
+    height: 70%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 #clockCenter {
@@ -598,6 +608,87 @@ body {
     width: 2rem;
 
 }
+
+
+
+
+
+
+.minutesNumber div{
+    position: fixed;
+    cursor: pointer;
+
+}
+
+.minutesNumber div:nth-child(1){
+    transform: rotate(0deg) translateY(-100px);
+}
+.minutesNumber div:nth-child(2){
+    transform: rotate(30deg) translateY(-100px);
+}
+.minutesNumber div:nth-child(3){
+    transform: rotate(60deg) translateY(-100px);
+}
+
+.minutesNumber div:nth-child(4){
+    transform: rotate(90deg) translateY(-100px);
+}
+
+.minutesNumber div:nth-child(5){
+    transform: rotate(120deg) translateY(-100px);
+}
+
+.minutesNumber div:nth-child(6){
+    transform: rotate(150deg) translateY(-100px);
+}
+
+.minutesNumber div:nth-child(7){
+    transform: rotate(180deg) translateY(-100px);
+}
+
+.minutesNumber div:nth-child(8){
+    transform: rotate(210deg) translateY(-100px);
+}
+
+.minutesNumber div:nth-child(9){
+    transform: rotate(240deg) translateY(-100px);
+}
+
+.minutesNumber div:nth-child(10){
+    transform: rotate(270deg) translateY(-100px);
+}
+
+.minutesNumber div:nth-child(11){
+    transform: rotate(300deg) translateY(-100px);
+}
+
+.minutesNumber div:nth-child(12){
+    transform: rotate(330deg) translateY(-100px);
+}
+
+.minutesDigit {
+    display: flex;
+    flex-direction: row;
+    border-radius: 9999px;
+    /* background-color: rgb(10, 111, 226); */
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    width: 2rem;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 .modalFooter {
     display: flex;
