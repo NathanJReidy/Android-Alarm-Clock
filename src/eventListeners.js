@@ -8,7 +8,9 @@ alarmsBody.addEventListener("click", (e) => {
     let element = e.target;
     console.log(element);
 
-    if (el.classList.contains('roundSliderGray')) {
+
+    // Event listener to show blue button 
+    if (element.classList.contains('roundSliderGray')) {
         // Function that shows blue on btn
         showBlueOnBtn(element);
 
@@ -18,8 +20,8 @@ alarmsBody.addEventListener("click", (e) => {
         // Function that shows white 'today'
         showWhiteAlarmDay(element);
     }
-
-    else if (el.classList.contains('roundSliderBlue')) {
+    // Event listener to hide blue button 
+    else if (element.classList.contains('roundSliderBlue')) {
         // Function that shows blue on btn
         hideBlueOnBtn(element);
 
@@ -30,30 +32,47 @@ alarmsBody.addEventListener("click", (e) => {
         hideWhiteAlarmDay(element);
 
     }
+    // Event listener for down icon to show extended card
+    else if (element.classList.contains('downIcon')) {
+        // Show extended card 
+        showExtendedCard(element);
+
+        // Change alarm card background colour 
+        changeAlarmCardBg(element);
+
+        // Hide alarm card bottom border
+        hideAlarmCardBorder(element);
+
+    }
+
+    // Event listener for up arrow icon to hide extended card
+    else if (element.classList.contains('upIcon')) {
+        // Hide extended card 
+        hideExtendedCard(element);
+
+        // Change alarm card background colour back to black
+        hideChangeAlarmCardBg(element);
+
+        // Show alarm card bottom border again
+        showAlarmCardBorder(element);
+
+    }
+
+    // Event listener for delete button (deletes the whole alarm object from the array and re-loads the page)
+    // We will have one event listener for the trash icon, and a separate event listener for the delete text.
+    else if (element.classList.contains('deleteIcon') || element.classList.contains('deleteText')) {
+        // Delete alarm object form array
+        
 
 
+        // Delete alarm card from screen 
+        deleteAlarmCard(element);
 
+    }
 
 })
 
 
-// Event listener for on button (i.e. when clicked it turns off)
-let roundSliderBlue= document.querySelectorAll(".roundSliderBlue");
-roundSliderBlue.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-        let datasetValue = e.target.parentNode.parentNode.parentNode.dataset.value;
-        console.log(datasetValue);
-
-        // Function that shows blue on btn
-        hideBlueOnBtn(datasetValue);
-
-        // Function that shows blue time
-        hideBlueTime(datasetValue);
-
-        // Function that shows white 'tomorrow'
-        hideWhiteAlarmDay(datasetValue);
-    })
-})
 
 
 
@@ -61,74 +80,6 @@ roundSliderBlue.forEach((btn) => {
 
 
 
-
-// Event listener for down arrow (brings up extra card appended at the bottom of main card)
-let downIcon = document.querySelectorAll(".downIcon");
-downIcon.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-        let datasetValue = e.target.parentNode.parentNode.parentNode.dataset.value;
-
-        // Show extended card 
-        showExtendedCard(datasetValue);
-
-        // Change alarm card background colour 
-        changeAlarmCardBg(datasetValue);
-
-        // Hide alarm card bottom border
-        hideAlarmCardBorder(datasetValue);
-
-    })
-})
-
-// Event listner for up arrow icon to hide extended card
-let upIcon = document.querySelectorAll(".upIcon");
-upIcon.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-        let datasetValue = e.target.parentNode.parentNode.parentNode.dataset.value;
-
-        // Hide extended card 
-        hideExtendedCard(datasetValue);
-
-        // Change alarm card background colour back to black
-        hideChangeAlarmCardBg(datasetValue);
-
-        // Show alarm card bottom border again
-        showAlarmCardBorder(datasetValue);
-
-    })
-})
-
-
-// Event listener for delete button (deletes the whole alarm object from the array and re-loads the page)
-// We will have one event listener for the trash icon, and a separate event listener for the delete text.
-
-let deleteIcon = document.querySelectorAll(".deleteIcon");
-deleteIcon.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-        let datasetValue = e.target.parentNode.parentNode.parentNode.dataset.value;
-
-        // Delete alarm object form array
-        
-
-
-        // Delete alarm card from screen 
-        deleteAlarmCard(datasetValue);
-    })
-})
-
-let deleteText = document.querySelectorAll(".deleteText");
-deleteText.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-        let datasetValue = e.target.parentNode.parentNode.parentNode.dataset.value;
-
-        // Delete alarm object form array
-        
-
-
-        // Delete alarm card from screen 
-        deleteAlarmCard(datasetValue);
-    })
-})
 
 
 // Event listener for fixed plus button, to add a new alarm
