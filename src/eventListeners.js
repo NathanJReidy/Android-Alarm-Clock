@@ -1,4 +1,4 @@
-import { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, changeAlarmCardBg, hideExtendedCard, hideChangeAlarmCardBg, showAlarmCardBorder, deleteAlarmCard, showOverlay, hideOverlay, hideDownIcon, showDownIcon, showModalCard, hideModalCard } from './DOMchanges.js'
+import { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, changeAlarmCardBg, hideExtendedCard, hideChangeAlarmCardBg, showAlarmCardBorder, deleteAlarmCard, showOverlay, hideOverlay, hideDownIcon, showDownIcon, showModalCard, hideModalCard, showHoursClock, hideHoursClock, showMinutesClock, hideMinutesClock, updateHour, focusMinutes, updateMinutes } from './DOMchanges.js'
 
 
 
@@ -99,7 +99,7 @@ addAlarmBtn.addEventListener("click", () => {
 
 })
 
-// Event listener for closing overlay when it is click
+// Event listener for closing overlay when it is clicked
 let overlay = document.querySelector(".overlay");
 overlay.addEventListener("click", () => {
     // Hide overlay
@@ -113,13 +113,59 @@ overlay.addEventListener("click", () => {
 
 
 // Event listener for hours div in choosing alarm time. Shows numbers 1-12.
+let inputAlarmTimeHour = document.querySelector('.inputAlarmTimeHour');
+inputAlarmTimeHour.addEventListener("click", () => {
+    // Show hours clock
+    showHoursClock();
 
-// Event listener for each of the numbers 1-12. 
+    // Hide minutes clock
+    hideMinutesClock();
+})
+
+
+// Event listener for each of the numbers 1-12 & 00-55. 
+let modalFixed = document.querySelector('.modalFixed');
+modalFixed.addEventListener("click", (e) => {
+    let element = e.target;
+    // Event listener for hour digits
+    if (element.classList.contains("hourDigit")) {
+        // Update inputAlarmTimeHour
+        updateHour(element);
+
+        // Focus the inputAlarmTimeMinutes input box
+        focusMinutes();
+    }
+    // Event listener for minutes digits
+    if (element.classList.contains("minutesDigit")) {
+
+        // Update inputAlarmTimeMinutes
+        updateMinutes(element);
+
+
+    }
+
+
+
+
+})
+
+
+
 
 
 // Event listener for minutes div in choosing alarm time. Shows numbers 00-59 progressively depending on clicked position. 
+let inputAlarmTimeMinutes = document.querySelector('.inputAlarmTimeMinutes');
+inputAlarmTimeMinutes.addEventListener("click", () => {
+    // Show minutes clock
+    showMinutesClock();
 
-// Event listener for each of the numbers 00-59. 
+    // Hide hours clock
+    hideHoursClock();
+})
+
+
+
+
 
 
 // Event listener for period div (am)
@@ -128,10 +174,39 @@ overlay.addEventListener("click", () => {
 // Event listener for period div (pm)
 
 
+
+
 // Event listener for 'cancel' <p> button. When clicked, hides add new alarm screen.
+let cancel = document.querySelector(".cancel");
+cancel.addEventListener("click", () => {
+    // Hide modal card
+    hideModalCard();
+
+    // Hide overlay
+    hideOverlay();
+
+})
+
 
 
 // Event listener for 'ok' <p> button. When clicked, pushes new alarm object to array and hides add new alarm screen. 
+let ok = document.querySelector(".ok");
+ok.addEventListener("click", () => {
+    // Create new alarm card object in array
+    
 
 
-// Event listener for modal overlay. When clicked, hides add new alarm screen. 
+    // Show new alarm card on screen (i.e. re-load the DOM)
+
+    
+
+    // Hide modal card
+    hideModalCard();
+
+    // Hide overlay
+    hideOverlay();
+})
+
+
+
+

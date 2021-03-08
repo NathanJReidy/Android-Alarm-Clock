@@ -447,7 +447,7 @@ body {
     outline: none;
     height: 100%;
     color: grey;
-    width: 2.5rem;
+    width: 3rem;
     font-size: inherit;
     align-items: center;
     border: none;
@@ -472,7 +472,7 @@ body {
     outline: none;
     height: 100%;
     color: grey;
-    width: 2.5rem;
+    width: 3.5rem;
     font-size: inherit;
     align-items: center;
     border: none;
@@ -610,6 +610,11 @@ body {
 
 }
 
+.hourDigit:hover {
+    background-color: rgb(10, 111, 226);
+
+}
+
 
 
 
@@ -677,6 +682,10 @@ body {
     height: 2rem;
     width: 2rem;
 
+}
+
+.minutesDigit:hover {
+    background-color: rgb(10, 111, 226);
 }
 
 
