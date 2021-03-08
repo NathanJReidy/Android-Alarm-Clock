@@ -1,5 +1,4 @@
-import { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, changeAlarmCardBg, hideExtendedCard, hideChangeAlarmCardBg, showAlarmCardBorder, deleteAlarmCard, showOverlay, hideOverlay, hideDownIcon, showDownIcon, showModalCard, hideModalCard, showHoursClock, hideHoursClock, showMinutesClock, hideMinutesClock, updateHour, focusMinutes, updateMinutes } from './DOMchanges.js'
-
+import { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, changeAlarmCardBg, hideExtendedCard, hideChangeAlarmCardBg, showAlarmCardBorder, deleteAlarmCard, showOverlay, hideOverlay, hideDownIcon, showDownIcon, showModalCard, hideModalCard, showHoursClock, hideHoursClock, showMinutesClock, hideMinutesClock, updateHour, focusMinutes, updateMinutes, showWhiteAM, showGrayPM, showWhitePM, showGrayAM } from './DOMchanges.js'
 
 
 // CORRECT Event listener for off button (i.e. when clicked it turns on)
@@ -144,9 +143,6 @@ modalFixed.addEventListener("click", (e) => {
 
     }
 
-
-
-
 })
 
 
@@ -169,10 +165,26 @@ inputAlarmTimeMinutes.addEventListener("click", () => {
 
 
 // Event listener for period div (am)
+let am = document.querySelector(".am");
+am.addEventListener("click", () => {
+    // Change AM text colour to white
+    showWhiteAM();
 
+    // Change PM text color to gray 
+    showGrayPM();
+
+})
 
 // Event listener for period div (pm)
+let pm = document.querySelector(".pm");
+pm.addEventListener("click", () => {
+    // Change PM text colour to white
+    showWhitePM();
 
+    // Change AM text color to gray 
+    showGrayAM();
+
+})
 
 
 

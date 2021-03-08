@@ -200,8 +200,30 @@ function hideMinutesClock() {
     minutesClock.style.display = 'none';
 }
 
- 
+// Change AM text color to white
+function showWhiteAM() {
+    let am = document.querySelector(".am");
+    am.style.color = 'white';
+}
+
+// Change PM text color to gray
+function showGrayPM() {
+    let pm = document.querySelector(".pm");
+    pm.style.color = 'gray';
+}
+
+// Change PM text color to white
+function showWhitePM() {
+    let pm = document.querySelector(".pm");
+    pm.style.color = 'white';
+}
+
+// Change AM text color to gray 
+function showGrayAM() {
+    let am = document.querySelector(".am");
+    am.style.color = 'gray';
+}
 
 
 
-export { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, changeAlarmCardBg, hideExtendedCard, hideChangeAlarmCardBg, showAlarmCardBorder, deleteAlarmCard, showOverlay, hideOverlay, hideDownIcon, showDownIcon, showModalCard, hideModalCard, showHoursClock, hideHoursClock, showMinutesClock, hideMinutesClock, updateHour, focusMinutes, updateMinutes }
+export { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, changeAlarmCardBg, hideExtendedCard, hideChangeAlarmCardBg, showAlarmCardBorder, deleteAlarmCard, showOverlay, hideOverlay, hideDownIcon, showDownIcon, showModalCard, hideModalCard, showHoursClock, hideHoursClock, showMinutesClock, hideMinutesClock, updateHour, focusMinutes, updateMinutes, showWhiteAM, showGrayPM, showWhitePM, showGrayAM }
