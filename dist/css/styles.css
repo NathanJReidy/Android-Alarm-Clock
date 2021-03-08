@@ -399,7 +399,8 @@ body {
 }
 
 .modalFixed {
-    position: fixed;
+    /* position: fixed; */
+    display: none;
     z-index: 30;
     left: 10%;
     top: 16%;
@@ -409,7 +410,8 @@ body {
 }
 
 .modalFlex {
-    display: flex;
+    /* display: flex; */
+    display: none;
     flex-direction: column;
     height: 100%;
     width: 100%;

@@ -1,9 +1,14 @@
-// When on (active) button is clicked, change the time div to blue. 
-function showBlueTime(index) {
-    let time = document.querySelectorAll(".time");
 
-    time[index].style.color = "rgb(75, 127, 240)";
+
+// CORRECT When on (active) button is clicked, change the time div to blue. 
+function showBlueTime(el) {
+    if (el.classList.contains('roundSliderGray')) {
+        el.parentElement.previousElementSibling.style.color = "rgb(75, 127, 240)";
+    }
 }
+
+
+
 
 // When off (active false) button is clicked, change the time div back to gray.
 function hideBlueTime(index) {
@@ -13,14 +18,17 @@ function hideBlueTime(index) {
 }
 
 
-// When on (active) button is clicked, change the on (active) button to blue and change positioning of the circle to the RHS.
-function showBlueOnBtn(index) {
-    let onBtn = document.querySelectorAll(".onBtn");
-    let offBtn = document.querySelectorAll(".offBtn");
 
-    onBtn[index].style.display = 'flex';
-    offBtn[index].style.display = 'none';
-}
+// CORRECT When on (active) button is clicked, change the on (active) button to blue and change positioning of the circle to the RHS.
+function showBlueOnBtn(el) {
+    if (el.classList.contains('roundSliderGray')) {
+        el.parentElement.style.display = 'none';
+        el.parentElement.nextElementSibling.style.display = 'flex';
+    };
+};
+
+
+
 
 // When off (active false) button is clicked, change the off (active false) button to gray and change positioning of the circle to the LHS.
 function hideBlueOnBtn(index) {
@@ -31,12 +39,16 @@ function hideBlueOnBtn(index) {
     offBtn[index].style.display = 'flex';
 }
 
-// When on (active) button is clicked, change the 'tomorrow' text class to white. 
-function showWhiteAlarmDay(index) {
-    let alarmDay = document.querySelectorAll(".alarmDay");
 
-    alarmDay[index].style.color = "whitesmoke";
+// CORRECT When on (active) button is clicked, change the 'tomorrow' text class to white. 
+function showWhiteAlarmDay(el) {
+    if (el.classList.contains('roundSliderGray')) {
+        el.parentElement.parentElement.nextElementSibling.firstElementChild.style.color = "whitesmoke";
+    }
 }
+
+
+
 
 // When off (active false) button is clicked, change the 'tomorrow' text class back to gray. 
 function hideWhiteAlarmDay(index) {

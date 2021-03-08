@@ -1,23 +1,41 @@
 import { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, changeAlarmCardBg, hideExtendedCard, hideChangeAlarmCardBg, showAlarmCardBorder, deleteAlarmCard, showOverlay, hideOverlay } from './DOMchanges.js'
 
 
-// Event listener for off button (i.e. when clicked it turns on)
-let roundSliderGray= document.querySelectorAll(".roundSliderGray");
-roundSliderGray.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-        let datasetValue = e.target.parentNode.parentNode.parentNode.dataset.value;
-        console.log(datasetValue);
 
+// CORRECT Event listener for off button (i.e. when clicked it turns on)
+let alarmsBody = document.querySelector(".alarmsBody");
+alarmsBody.addEventListener("click", (e) => {
+    let element = e.target;
+    console.log(element);
+
+    if (el.classList.contains('roundSliderGray')) {
         // Function that shows blue on btn
-        showBlueOnBtn(datasetValue);
+        showBlueOnBtn(element);
 
         // Function that shows blue time
-        showBlueTime(datasetValue);
+        showBlueTime(element);
 
-        // Function that shows white 'tomorrow'
-        showWhiteAlarmDay(datasetValue);
-    })
+        // Function that shows white 'today'
+        showWhiteAlarmDay(element);
+    }
+
+    else if (el.classList.contains('roundSliderBlue')) {
+        // Function that shows blue on btn
+        hideBlueOnBtn(element);
+
+        // Function that shows blue time
+        hideBlueTime(element);
+
+        // Function that shows white 'today'
+        hideWhiteAlarmDay(element);
+
+    }
+
+
+
+
 })
+
 
 // Event listener for on button (i.e. when clicked it turns off)
 let roundSliderBlue= document.querySelectorAll(".roundSliderBlue");
