@@ -44,4 +44,6 @@ function loadAlarms() {
 
 }
 
-loadAlarms();
+// loadAlarms();
+
+export { loadAlarms }

@@ -7,11 +7,13 @@ let allAlarms = [
     "hours": "12",
     "minutes": "45",
     "period": "pm",
+    "active": false,
     },
     {
     "hours": "7",
     "minutes": "15",
     "period": "pm",
+    "active": false,
     }
 ];
 
@@ -32,4 +34,4 @@ function createAlarm(hours, minutes, period) {
 
 
 
-export { allAlarms } 
+export { allAlarms, createAlarm } 

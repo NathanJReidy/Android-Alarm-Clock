@@ -1,4 +1,6 @@
 import { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, changeAlarmCardBg, hideExtendedCard, hideChangeAlarmCardBg, showAlarmCardBorder, deleteAlarmCard, showOverlay, hideOverlay, hideDownIcon, showDownIcon, showModalCard, hideModalCard, showHoursClock, hideHoursClock, showMinutesClock, hideMinutesClock, updateHour, focusMinutes, updateMinutes, showWhiteAM, showGrayPM, showWhitePM, showGrayAM } from './DOMchanges.js'
+import { createAlarm } from './logic.js'
+import { loadAlarms } from './DOMload.js'
 
 
 // CORRECT Event listener for off button (i.e. when clicked it turns on)
@@ -206,11 +208,17 @@ let ok = document.querySelector(".ok");
 ok.addEventListener("click", () => {
     // Create new alarm card object in array
     // i.e. extract the values from inputAlarmTimeHour and inputAlarmTimeMinutes as well as an if statement for whether AM or PM style.display is white (i.e. selected)
+    let inputAlarmTimeHour = document.querySelector('.inputAlarmTimeHour');
+    let inputAlarmTimeMinutes = document.querySelector('.inputAlarmTimeMinutes');
+    let alarmsBody = document.querySelector('.alarmsBody');
+    
+    // Add new alarm to array of objects
+    createAlarm(inputAlarmTimeHour.value, inputAlarmTimeMinutes.value, "pm");
     
 
-
     // Show new alarm card on screen (i.e. re-load the DOM)
-
+    alarmsBody.innerHTML = "";
+    document.addEventListener('DOMContentLoaded', loadAlarms());
     
 
     // Hide modal card
@@ -222,4 +230,5 @@ ok.addEventListener("click", () => {
 
 
 
-
+document.addEventListener('DOMContentLoaded', loadAlarms());
+    
