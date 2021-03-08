@@ -4,17 +4,11 @@
 // (for illustrative purposes only)
 let allAlarms = [
     {
-    "hours": "12",
+    "hours": "10",
     "minutes": "45",
-    "period": "pm",
+    "period": "am",
     "active": false,
     },
-    {
-    "hours": "7",
-    "minutes": "15",
-    "period": "pm",
-    "active": false,
-    }
 ];
 
 function createAlarm(hours, minutes, period) {
