@@ -400,8 +400,7 @@ body {
 }
 
 .modalFixed {
-    /* position: fixed; */
-    display: none;
+    position: fixed;
     z-index: 30;
     left: 10%;
     top: 16%;
@@ -411,8 +410,7 @@ body {
 }
 
 .modalFlex {
-    /* display: flex; */
-    display: none;
+    display: flex;
     flex-direction: column;
     height: 100%;
     width: 100%;
@@ -420,15 +418,54 @@ body {
 
 }
 
-.alarmTime {
+.alarmTimeDiv {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 100%;
-    font-size: 3rem;
+    height: 10%;
+    /* font-size: 1rem; */
     color: gray;
 }
+
+.inputAlarmTime {
+    display: flex;
+    flex-direction: row;
+    background-color: inherit;
+    outline: none;
+    height: 100%;
+    border: hidden;
+    color: grey;
+    font-size: inherit;
+    align-items: center;
+
+}
+
+.timePeriod {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.am {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0;
+    cursor: pointer;
+
+
+}
+
+.pm {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    cursor: pointer;
+
+}
+
 
 .hoursClock {
     display: flex;
@@ -437,6 +474,7 @@ body {
     width: 100%;
     justify-content: center;
     align-items: center;
+    
 
 }
 
@@ -448,8 +486,9 @@ body {
     border-radius: 9999px;
     background-color: none;
     left: 50%;
-    top: 45%;
+    top: 44%;
     transform: translate(-50%, 0);
+
 
 }
 
@@ -509,10 +548,45 @@ body {
     display: flex;
     flex-direction: row;
     border-radius: 9999px;
-    background-color: rgb(10, 111, 226);
+    /* background-color: rgb(10, 111, 226); */
     justify-content: center;
     align-items: center;
     height: 2rem;
     width: 2rem;
 
+}
+
+.modalFooter {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 3rem;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8rem;
+    padding-top: 2rem;
+}
+
+.rightDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 6rem;
+    margin-right: 2rem;
+}
+
+.cancel {
+    margin-right: 3rem;
+    color: rgb(10, 111, 226);
+    cursor: pointer;
+}
+
+.ok {
+    margin-right: 4rem;
+    color: rgb(10, 111, 226);
+    cursor: pointer;
+}
+
+.keyboardIcon {
+    cursor: pointer;
 }
