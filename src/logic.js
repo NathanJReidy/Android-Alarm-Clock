@@ -26,6 +26,19 @@ function createAlarm(hours, minutes, period) {
     })
 }
 
+// Check whether AM or PM is selected 
+function checkTimePeriod() {
+    let am = document.querySelector('.am');
+    let pm = document.querySelector('.pm');
+
+    if (am.style.color == "white") {
+        return "am"
+    }
+
+    if (pm.style.color == "white") {
+        return "pm"
+    }
+}
 
 // Function to update alarm object/array with new time
 
@@ -34,4 +47,4 @@ function createAlarm(hours, minutes, period) {
 
 
 
-export { allAlarms, createAlarm } 
+export { allAlarms, createAlarm, checkTimePeriod } 

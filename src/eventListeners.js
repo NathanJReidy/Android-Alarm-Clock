@@ -1,5 +1,5 @@
 import { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, changeAlarmCardBg, hideExtendedCard, hideChangeAlarmCardBg, showAlarmCardBorder, deleteAlarmCard, showOverlay, hideOverlay, hideDownIcon, showDownIcon, showModalCard, hideModalCard, showHoursClock, hideHoursClock, showMinutesClock, hideMinutesClock, updateHour, focusMinutes, updateMinutes, showWhiteAM, showGrayPM, showWhitePM, showGrayAM } from './DOMchanges.js'
-import { createAlarm } from './logic.js'
+import { createAlarm, checkTimePeriod } from './logic.js'
 import { loadAlarms } from './DOMload.js'
 
 
@@ -7,7 +7,7 @@ import { loadAlarms } from './DOMload.js'
 let alarmsBody = document.querySelector(".alarmsBody");
 alarmsBody.addEventListener("click", (e) => {
     let element = e.target;
-    console.log(element);
+
 
 
     // Event listener to show blue button 
@@ -211,12 +211,12 @@ ok.addEventListener("click", () => {
     let inputAlarmTimeHour = document.querySelector('.inputAlarmTimeHour');
     let inputAlarmTimeMinutes = document.querySelector('.inputAlarmTimeMinutes');
     let alarmsBody = document.querySelector('.alarmsBody');
+
     
     // Add new alarm to array of objects
-    createAlarm(inputAlarmTimeHour.value, inputAlarmTimeMinutes.value, "pm");
-    
+    createAlarm(inputAlarmTimeHour.value, inputAlarmTimeMinutes.value, checkTimePeriod());
 
-    // Show new alarm card on screen (i.e. re-load the DOM)
+    // Remove all existing alarm cards, then show new alarm card on screen by re-loading the entire DOM of the alarm cards in the array of objects)
     alarmsBody.innerHTML = "";
     document.addEventListener('DOMContentLoaded', loadAlarms());
     
@@ -229,6 +229,6 @@ ok.addEventListener("click", () => {
 })
 
 
-
+// Initial page load of alarm objects in array 
 document.addEventListener('DOMContentLoaded', loadAlarms());
     

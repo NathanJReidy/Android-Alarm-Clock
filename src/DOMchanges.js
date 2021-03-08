@@ -105,8 +105,6 @@ function hideDownIcon(el) {
 function showDownIcon(el) {
     if (el.classList.contains('upIcon')) {
         el.parentElement.parentElement.previousElementSibling.children[1].style.display = 'flex';
-        console.log("SHOW DOWN ICON RUNS");
-        console.log(el.parentElement.parentElement.previousElementSibling.children[1]);
     }
 }
 
