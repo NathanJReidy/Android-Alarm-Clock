@@ -429,29 +429,71 @@ body {
     color: gray;
 }
 
-.inputAlarmTime {
+.alarmTimeWrapper {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 40%;
+    align-content: center;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+.inputAlarmTimeHour {
     display: flex;
     flex-direction: row;
     background-color: inherit;
     outline: none;
     height: 100%;
-    border: hidden;
     color: grey;
+    width: 2.5rem;
     font-size: inherit;
     align-items: center;
+    border: none;
+    font-size: xx-large;
+}
+
+.semiColon {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    padding-right: 0.25rem;
+    padding-left: 0.25rem;
+    font-size: xx-large;
+    margin: 0;
 
 }
+
+.inputAlarmTimeMinutes {
+    display: flex;
+    flex-direction: row;
+    background-color: inherit;
+    outline: none;
+    height: 100%;
+    color: grey;
+    width: 2.5rem;
+    font-size: inherit;
+    align-items: center;
+    border: none;
+    font-size: xx-large;
+}
+
+
 
 .timePeriod {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-content: center;
     height: 100%;
+    margin: 0;
+    font-size: small;
+    margin-bottom: 0.75rem;
 }
 
 .am {
-    display: flex;
-    flex-direction: row;
+    /* display: flex;
+    flex-direction: row; */
     margin-bottom: 0;
     cursor: pointer;
 
@@ -459,10 +501,11 @@ body {
 }
 
 .pm {
-    display: flex;
-    flex-direction: row;
+    /* display: flex;
+    flex-direction: row; */
     margin: 0;
     cursor: pointer;
+    
 
 }
 
