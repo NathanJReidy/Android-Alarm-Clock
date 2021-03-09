@@ -89,6 +89,7 @@ setInterval(() => {
 	// 	hours = 12;
     // } 
 
+    // The below doesn't work for 00 minutes or 00 hours
 
     let currentTime = `${hours}:${minutes}${period}`;
     
