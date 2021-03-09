@@ -75,6 +75,46 @@ function loadOnBtns(index) {
     selectedRoundSliderGray.click();
 }
 
+// When alarm time equals the current time, play the alarm sound
+let sound = new Audio("https://www.freespecialeffects.co.uk/soundfx/animals/duck1.wav");
+setInterval(() => {
+    let date = new Date();
+    let hours = Math.abs(12 - (date.getHours()));
+	let minutes = date.getMinutes();
+    let period = (date.getHours()) < 12 ? 'am' : 'pm';
+    
+
+	//convert 24hr time to standard 12hr time
+	// if (hours == 00) {
+	// 	hours = 12;
+    // } 
+
+
+    let currentTime = `${hours}:${minutes}${period}`;
+    
+    console.log(`currentTime is ${currentTime}`);
+
+    allAlarms.forEach((alarm, index) => {
+        if (alarm.active === true) {
+            let alarmTime = `${alarm.hours}:${alarm.minutes}${alarm.period}`;
+            console.log(`alarmTime is ${alarmTime}`);
+            if (alarmTime == currentTime) {
+                sound.play();
+                console.log("Alarm went off!");
+                //alert("Click ok to stop the alarm!");
+                // When stop alarm button is pressed, stop the alarm
+                //sound.pause();
+
+            }
+        }
+    })
+
+},1000);
+
+
+
+
+
 
 
 export { allAlarms, createAlarm, checkTimePeriod, deleteAlarmObject, activeFalse, activeTrue, loadActiveAlarms, loadOnBtns } 
