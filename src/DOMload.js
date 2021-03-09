@@ -7,6 +7,7 @@ function loadAlarms() {
         const alarmsBody = document.querySelector('.alarmsBody');
         const alarmCard = document.createElement('div');
         alarmCard.className = "alarmCard";
+        alarmCard.dataset.value = index;
 
         alarmCard.innerHTML = `
         <div id="alarmTopSection">

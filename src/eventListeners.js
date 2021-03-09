@@ -1,5 +1,5 @@
 import { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, changeAlarmCardBg, hideExtendedCard, hideChangeAlarmCardBg, showAlarmCardBorder, deleteAlarmCard, showOverlay, hideOverlay, hideDownIcon, showDownIcon, showModalCard, hideModalCard, showHoursClock, hideHoursClock, showMinutesClock, hideMinutesClock, updateHour, focusMinutes, updateMinutes, showWhiteAM, showGrayPM, showWhitePM, showGrayAM } from './DOMchanges.js'
-import { createAlarm, checkTimePeriod } from './logic.js'
+import { createAlarm, checkTimePeriod, deleteAlarmObject } from './logic.js'
 import { loadAlarms } from './DOMload.js'
 
 
@@ -69,8 +69,7 @@ alarmsBody.addEventListener("click", (e) => {
     // We will have one event listener for the trash icon, and a separate event listener for the delete text.
     else if (element.classList.contains('deleteIcon') || element.classList.contains('deleteText')) {
         // Delete alarm object from array
-        
-
+        deleteAlarmObject(element);
 
         // Delete alarm card from screen 
         deleteAlarmCard(element);

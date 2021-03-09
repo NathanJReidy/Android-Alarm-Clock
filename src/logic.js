@@ -20,6 +20,13 @@ function createAlarm(hours, minutes, period) {
     })
 }
 
+function deleteAlarmObject(el) {
+    let index = el.parentElement.parentElement.parentElement.dataset.value;
+    allAlarms.splice(index, 1);
+}
+
+
+
 // Check whether AM or PM is selected 
 function checkTimePeriod() {
     let am = document.querySelector('.am');
@@ -41,4 +48,4 @@ function checkTimePeriod() {
 
 
 
-export { allAlarms, createAlarm, checkTimePeriod } 
+export { allAlarms, createAlarm, checkTimePeriod, deleteAlarmObject } 
