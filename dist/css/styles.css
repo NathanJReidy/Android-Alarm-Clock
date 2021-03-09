@@ -140,6 +140,8 @@ body {
 
 }
 
+
+
 .timeBlue {
     color: rgb(75, 127, 240);
 }
@@ -227,6 +229,8 @@ body {
 .alarmDayWhite {
     color: whitesmoke;
 }
+
+
 
 #downArrow {
     display: flex;

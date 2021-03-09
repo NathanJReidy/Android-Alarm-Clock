@@ -1,5 +1,5 @@
 import { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, changeAlarmCardBg, hideExtendedCard, hideChangeAlarmCardBg, showAlarmCardBorder, deleteAlarmCard, showOverlay, hideOverlay, hideDownIcon, showDownIcon, showModalCard, hideModalCard, showHoursClock, hideHoursClock, showMinutesClock, hideMinutesClock, updateHour, focusMinutes, updateMinutes, showWhiteAM, showGrayPM, showWhitePM, showGrayAM } from './DOMchanges.js'
-import { createAlarm, checkTimePeriod, deleteAlarmObject } from './logic.js'
+import { createAlarm, checkTimePeriod, deleteAlarmObject, activeFalse, activeTrue, loadActiveAlarms } from './logic.js'
 import { loadAlarms } from './DOMload.js'
 
 
@@ -7,8 +7,6 @@ import { loadAlarms } from './DOMload.js'
 let alarmsBody = document.querySelector(".alarmsBody");
 alarmsBody.addEventListener("click", (e) => {
     let element = e.target;
-
-
 
     // Event listener to show blue button 
     if (element.classList.contains('roundSliderGray')) {
@@ -20,17 +18,23 @@ alarmsBody.addEventListener("click", (e) => {
 
         // Function that shows white 'today'
         showWhiteAlarmDay(element);
+
+        // Function that turns the element's active string to true
+        activeTrue(element);
     }
     // Event listener to hide blue button 
     else if (element.classList.contains('roundSliderBlue')) {
-        // Function that shows blue on btn
+        // Function that hides blue on btn
         hideBlueOnBtn(element);
 
-        // Function that shows blue time
+        // Function that hides blue time
         hideBlueTime(element);
 
-        // Function that shows white 'today'
+        // Function that hides white 'today'
         hideWhiteAlarmDay(element);
+
+        // Function that changes the element's active string in array to false
+        activeFalse(element);
 
     }
     // Event listener for down icon to show extended card
@@ -218,7 +222,9 @@ ok.addEventListener("click", () => {
     // Remove all existing alarm cards, then show new alarm card on screen by re-loading the entire DOM of the alarm cards in the array of objects)
     alarmsBody.innerHTML = "";
     document.addEventListener('DOMContentLoaded', loadAlarms());
-    
+
+    // Turn all active alarms on
+    loadActiveAlarms();
 
     // Hide modal card
     hideModalCard();
