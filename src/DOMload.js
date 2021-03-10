@@ -62,14 +62,6 @@ function loadActivatedAlarm(alarm) {
 }
 
 
-{/* <div class="activatedAlarmFixed">
-    <div class="activatedAlarmWrapper">
-        <p class="alarmText">Alarm</p>
-        <p class="activatedAlarmTime">alarmTime</p>
-        <button class="dismissAlarmBtn">Dismiss</button>
-    </div>
-</div> */}
-
 
 
 export { loadAlarms, loadActivatedAlarm }

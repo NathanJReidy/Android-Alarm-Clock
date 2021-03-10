@@ -1,4 +1,5 @@
 import { loadActivatedAlarm } from './DOMload.js'
+import { stopActivatedAlarm } from './eventListeners.js'
 
 // Create an array of objects to store alarm data. Note that
 // an example alarm object is included in the array so that an initial alarm is shown
@@ -78,6 +79,8 @@ function loadOnBtns(index) {
 
 // When alarm time equals the current time, play the alarm sound
 let sound = new Audio("https://www.freespecialeffects.co.uk/soundfx/animals/duck1.wav");
+sound.loop = true;
+
 setInterval(() => {
     let date = new Date();
     let hours = Math.abs(12 - (date.getHours()));
@@ -106,12 +109,10 @@ setInterval(() => {
                 // Load activated alarm card
                 loadActivatedAlarm(alarm);
                 console.log("Alarm went off!");
-                // Run click event listener on activated alarm card 'dismiss' button
-                // When dismiss button is clicked, remove tha activated alarm card
-                // from the DOM and stop the alarm 
-                
-                //sound.pause();
 
+                // Turn off alarm when dismiss button is clicked
+                stopActivatedAlarm();
+ 
             }
         }
     })
@@ -124,4 +125,4 @@ setInterval(() => {
 
 
 
-export { allAlarms, createAlarm, checkTimePeriod, deleteAlarmObject, activeFalse, activeTrue, loadActiveAlarms, loadOnBtns } 
+export { allAlarms, createAlarm, checkTimePeriod, deleteAlarmObject, activeFalse, activeTrue, loadActiveAlarms, loadOnBtns, sound } 

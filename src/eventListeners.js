@@ -1,5 +1,5 @@
 import { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, changeAlarmCardBg, hideExtendedCard, hideChangeAlarmCardBg, showAlarmCardBorder, deleteAlarmCard, showOverlay, hideOverlay, hideDownIcon, showDownIcon, showModalCard, hideModalCard, showHoursClock, hideHoursClock, showMinutesClock, hideMinutesClock, updateHour, focusMinutes, updateMinutes, showWhiteAM, showGrayPM, showWhitePM, showGrayAM } from './DOMchanges.js'
-import { createAlarm, checkTimePeriod, deleteAlarmObject, activeFalse, activeTrue, loadActiveAlarms } from './logic.js'
+import { createAlarm, checkTimePeriod, deleteAlarmObject, activeFalse, activeTrue, loadActiveAlarms, sound } from './logic.js'
 import { loadAlarms } from './DOMload.js'
 
 
@@ -233,7 +233,28 @@ ok.addEventListener("click", () => {
     hideOverlay();
 })
 
+// Event listener for activated alarm card
+// Run click event listener on activated alarm card 'dismiss' button
+// When dismiss button is clicked, remove the activated alarm card
+// from the DOM and stop the alarm
+function stopActivatedAlarm() {
+    let activatedAlarmFixed = document.querySelector('.activatedAlarmFixed');
+    let dismissAlarmBtn = document.querySelector('.dismissAlarmBtn');
+    
+    dismissAlarmBtn.addEventListener("click", () => {
+        // Removes activated alarm card from DOM
+        activatedAlarmFixed.remove();
+
+        // Stops alarm sound from playing
+        sound.pause();
+
+    })
+}
+
 
 // Initial page load of alarm objects in array 
 document.addEventListener('DOMContentLoaded', loadAlarms());
-    
+
+
+
+export { stopActivatedAlarm }
