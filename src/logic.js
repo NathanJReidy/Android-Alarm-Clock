@@ -1,5 +1,6 @@
 import { loadActivatedAlarm } from './DOMload.js'
 import { stopActivatedAlarm } from './eventListeners.js'
+import { loadAlarms} from './DOMload.js'
 
 // Create an array of objects to store alarm data. Note that
 // an example alarm object is included in the array so that an initial alarm is shown
@@ -64,6 +65,8 @@ function loadActiveAlarms() {
     allAlarms.forEach((alarm, index) => {
         if (alarm.active === true) {
             loadOnBtns(index);
+        } else if (alarm.active === false) {
+            loadOffBtns(index);
         }
     })
 }
@@ -73,14 +76,31 @@ function loadOnBtns(index) {
     let selectedAlarm = alarmCards[index];
     let selectedRoundSliderGray = selectedAlarm.children[0].children[1].children[0]; 
 
-    // Mimick on button being clicked to trigger on event listener, which turns time text to blue, on button to blue and 'today' text to white
+    // Mimick on button being clicked to trigger on btn event listener, which turns time text to blue, on button to blue and 'today' text to white
     selectedRoundSliderGray.click();
 }
+
+function loadOffBtns(index) {
+    let alarmCards = document.querySelectorAll('.alarmCard');
+    let selectedAlarm = alarmCards[index];
+    let selectedRoundSliderBlue = selectedAlarm.children[0].children[2].children[0]; 
+
+    // Mimick off button being clicked to trigger off btn event listener, which turns time text to gray, on button to gray and 'today' text to gray
+    selectedRoundSliderBlue.click();
+}
+
+
+
 
 // When alarm time equals the current time, play the alarm sound
 let sound = new Audio("https://www.freespecialeffects.co.uk/soundfx/animals/duck1.wav");
 sound.loop = true;
 
+// Initial page load of alarm objects in array 
+// document.addEventListener('DOMContentLoaded', loadAlarms());
+loadAlarms();
+
+// alarmTriggered = false; 
 setInterval(() => {
     let date = new Date();
     let hours = Math.abs(12 - (date.getHours()));
@@ -112,7 +132,13 @@ setInterval(() => {
 
                 // Turn off alarm when dismiss button is clicked
                 stopActivatedAlarm();
- 
+
+                // Turn alarm off by setting active to false in object
+                alarm.active = false;
+
+                // Turn alarm card off by re-loading the DOM so that the alarm btn, text etc turn gray again (i.e. shows the alarm is off)
+                loadActiveAlarms();
+
             }
         }
     })
@@ -121,7 +147,11 @@ setInterval(() => {
 
 
 
-
+// TO DO
+// 1. ADD FUNCTIONALITY TO UPDATE ALARM BY CLICKING ON EACH CARD'S ALARM TIME
+// 2. FIX THE 00 HOURS & 00 MINUTE ERROR WHEN RUNNING SET INTERVAL (I.E. WHEN ALARM IS ACTIVATED)
+// 3. FIX FOOTER (ADD LOGOS)
+// 4. FIX DESKTOP DESIGN (ADD MEDIA QUERIES)
 
 
 

@@ -233,6 +233,10 @@ ok.addEventListener("click", () => {
     hideOverlay();
 })
 
+// Initial page load of alarm objects in array 
+// document.addEventListener('DOMContentLoaded', loadAlarms());
+// loadAlarms();
+
 // Event listener for activated alarm card
 // Run click event listener on activated alarm card 'dismiss' button
 // When dismiss button is clicked, remove the activated alarm card
@@ -252,8 +256,7 @@ function stopActivatedAlarm() {
 }
 
 
-// Initial page load of alarm objects in array 
-document.addEventListener('DOMContentLoaded', loadAlarms());
+
 
 
 
