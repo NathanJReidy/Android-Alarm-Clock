@@ -1,3 +1,4 @@
+import { loadActivatedAlarm } from './DOMload.js'
 
 // Create an array of objects to store alarm data. Note that
 // an example alarm object is included in the array so that an initial alarm is shown
@@ -100,10 +101,15 @@ setInterval(() => {
             let alarmTime = `${alarm.hours}:${alarm.minutes}${alarm.period}`;
             console.log(`alarmTime is ${alarmTime}`);
             if (alarmTime == currentTime) {
+                // Play alarm sound
                 sound.play();
+                // Load activated alarm card
+                loadActivatedAlarm(alarm);
                 console.log("Alarm went off!");
-                //alert("Click ok to stop the alarm!");
-                // When stop alarm button is pressed, stop the alarm
+                // Run click event listener on activated alarm card 'dismiss' button
+                // When dismiss button is clicked, remove tha activated alarm card
+                // from the DOM and stop the alarm 
+                
                 //sound.pause();
 
             }

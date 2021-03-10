@@ -45,6 +45,31 @@ function loadAlarms() {
 
 }
 
-// loadAlarms();
+function loadActivatedAlarm(alarm) {
+    const overlay = document.querySelector('.overlay');
+    const activatedAlarmFixed = document.createElement('div');
+    activatedAlarmFixed.className = "activatedAlarmFixed";
 
-export { loadAlarms }
+    activatedAlarmFixed.innerHTML = `
+    <div class="activatedAlarmWrapper">
+        <p class="alarmText">Alarm</p>
+        <p class="activatedAlarmTime">${alarm.hours}:${alarm.minutes} ${alarm.period}</p>
+        <button class="dismissAlarmBtn">Dismiss</button>
+    </div>
+    `
+
+    overlay.after(activatedAlarmFixed);
+}
+
+
+{/* <div class="activatedAlarmFixed">
+    <div class="activatedAlarmWrapper">
+        <p class="alarmText">Alarm</p>
+        <p class="activatedAlarmTime">alarmTime</p>
+        <button class="dismissAlarmBtn">Dismiss</button>
+    </div>
+</div> */}
+
+
+
+export { loadAlarms, loadActivatedAlarm }
