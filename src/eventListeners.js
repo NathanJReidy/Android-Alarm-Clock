@@ -1,4 +1,4 @@
-import { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, changeAlarmCardBg, hideExtendedCard, hideChangeAlarmCardBg, showAlarmCardBorder, deleteAlarmCard, showOverlay, hideOverlay, hideDownIcon, showDownIcon, showModalCard, hideModalCard, showHoursClock, hideHoursClock, showMinutesClock, hideMinutesClock, updateHour, focusMinutes, updateMinutes, showWhiteAM, showGrayPM, showWhitePM, showGrayAM } from './DOMchanges.js'
+import { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, hideExtendedCard, showAlarmCardBorder, deleteAlarmCard, showOverlay, hideOverlay, hideDownIcon, showDownIcon, showModalCard, hideModalCard, showHoursClock, hideHoursClock, showMinutesClock, hideMinutesClock, updateHour, focusMinutes, updateMinutes, showWhiteAM, showGrayPM, showWhitePM, showGrayAM } from './DOMchanges.js'
 import { createAlarm, checkTimePeriod, deleteAlarmObject, activeFalse, activeTrue, loadActiveAlarms, sound } from './logic.js'
 import { loadAlarms } from './DOMload.js'
 
@@ -43,7 +43,7 @@ alarmsBody.addEventListener("click", (e) => {
         showExtendedCard(element);
 
         // Change alarm card background colour 
-        changeAlarmCardBg(element);
+        // changeAlarmCardBg(element);
 
         // Hide alarm card bottom border
         hideAlarmCardBorder(element);
@@ -59,7 +59,7 @@ alarmsBody.addEventListener("click", (e) => {
         hideExtendedCard(element);
 
         // Change alarm card background colour back to black
-        hideChangeAlarmCardBg(element);
+        // hideChangeAlarmCardBg(element);
 
         // Show alarm card bottom border again
         showAlarmCardBorder(element);

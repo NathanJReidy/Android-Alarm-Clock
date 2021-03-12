@@ -72,19 +72,19 @@ function showAlarmCardBorder(el) {
 }
 
 // CORRECT Change background colour of alarm card to gray
-function changeAlarmCardBg(el) {
-    if (el.classList.contains('downIcon')) {
-        el.parentElement.parentElement.parentElement.style =  "background-color: rgb(27, 27, 27)";
-    }
+// function changeAlarmCardBg(el) {
+//     if (el.classList.contains('downIcon')) {
+//         el.parentElement.parentElement.parentElement.style =  "background-color: rgb(27, 27, 27)";
+//     }
 
-}
+// }
 
 // CORRECT Change background colour of alarm card to black again
-function hideChangeAlarmCardBg(el) {
-    if (el.classList.contains('upIcon')) {
-        el.parentElement.parentElement.parentElement.style = "background-color: none";
-    }
-}
+// function hideChangeAlarmCardBg(el) {
+//     if (el.classList.contains('upIcon')) {
+//         el.parentElement.parentElement.parentElement.style = "background-color: none";
+//     }
+// }
 
 // CORRECT Hide (i.e. delete) alarm card from screen
 function deleteAlarmCard(el) {
@@ -224,4 +224,4 @@ function showGrayAM() {
 
 
 
-export { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, changeAlarmCardBg, hideExtendedCard, hideChangeAlarmCardBg, showAlarmCardBorder, deleteAlarmCard, showOverlay, hideOverlay, hideDownIcon, showDownIcon, showModalCard, hideModalCard, showHoursClock, hideHoursClock, showMinutesClock, hideMinutesClock, updateHour, focusMinutes, updateMinutes, showWhiteAM, showGrayPM, showWhitePM, showGrayAM }
+export { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, hideExtendedCard, showAlarmCardBorder, deleteAlarmCard, showOverlay, hideOverlay, hideDownIcon, showDownIcon, showModalCard, hideModalCard, showHoursClock, hideHoursClock, showMinutesClock, hideMinutesClock, updateHour, focusMinutes, updateMinutes, showWhiteAM, showGrayPM, showWhitePM, showGrayAM }

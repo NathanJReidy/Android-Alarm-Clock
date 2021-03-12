@@ -93,7 +93,7 @@ function loadOffBtns(index) {
 
 
 // When alarm time equals the current time, play the alarm sound
-let sound = new Audio("https://www.freespecialeffects.co.uk/soundfx/animals/duck1.wav");
+let sound = new Audio("https://onlineclock.net/audio/options/default.mp3");
 sound.loop = true;
 
 // Initial page load of alarm objects in array 
