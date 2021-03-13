@@ -1,6 +1,10 @@
 import { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, hideExtendedCard, showAlarmCardBorder, deleteAlarmCard, showOverlay, hideOverlay, hideDownIcon, showDownIcon, showModalCard, hideModalCard, showHoursClock, hideHoursClock, showMinutesClock, hideMinutesClock, updateHour, focusMinutes, updateMinutes, showWhiteAM, showGrayPM, showWhitePM, showGrayAM, updateTimeMinutes, updateTimeHour, updateTimePeriod } from './DOMchanges.js'
-import { createAlarm, checkTimePeriod, deleteAlarmObject, activeFalse, activeTrue, loadActiveAlarms, sound } from './logic.js'
+import { createAlarm, checkTimePeriod, deleteAlarmObject, activeFalse, activeTrue, loadActiveAlarms, sound, updateAlarmObject, findAlarmObjectIndex } from './logic.js'
 import { loadAlarms } from './DOMload.js'
+
+let ok = document.querySelector(".ok");
+let update = document.querySelector(".update");
+let currentAlarmCardIndex = null;
 
 
 // CORRECT Event listener for off button (i.e. when clicked it turns on)
@@ -82,19 +86,26 @@ alarmsBody.addEventListener("click", (e) => {
 
     // Event listener for updating the alarm time when clicked
     else if (element.classList.contains('time')) {
+        console.log('time class event listener runs!');
         // Show overlay
         showOverlay();
 
         // Show modal
         showModalCard();
 
+
+
         // Show correct time and period on modal 
         updateTimeHour(element);
         updateTimeMinutes(element);
         updateTimePeriod(element);
 
-        // Update alarm clock in object array and re-load DOM
+        // Show update div, hide ok div
+        ok.style.display = 'none';
+        update.style.display = 'flex';
 
+
+        currentAlarmCardIndex = findAlarmObjectIndex(element);
 
     }
 
@@ -110,14 +121,26 @@ alarmsBody.addEventListener("click", (e) => {
 
 
 
+
+
 // Event listener for fixed plus button, to add a new alarm
 let addAlarmBtn = document.querySelector(".addAlarmBtn");
 addAlarmBtn.addEventListener("click", () => {
+    console.log("addAlarmBtn event listeners runs!");
     // Show overlay 
     showOverlay();
 
     // Show modal card 
     showModalCard();
+
+    // Hide update div, show ok div
+    update.style.display = 'none';
+    ok.style.display = 'flex';
+
+    // Run add new alarm event listener
+    // okEventListener("Add");
+    // ok.addEventListener("click", addAlarm("Add"));
+
 
 })
 
@@ -225,7 +248,7 @@ cancel.addEventListener("click", () => {
 
 
 // Event listener for 'ok' <p> button. When clicked, pushes new alarm object to array and hides add new alarm screen. 
-let ok = document.querySelector(".ok");
+
 ok.addEventListener("click", () => {
     // Create new alarm card object in array
     // i.e. extract the values from inputAlarmTimeHour and inputAlarmTimeMinutes as well as an if statement for whether AM or PM style.display is white (i.e. selected)
@@ -250,6 +273,34 @@ ok.addEventListener("click", () => {
     // Hide overlay
     hideOverlay();
 })
+
+
+update.addEventListener('click', () => {
+    let inputAlarmTimeHour = document.querySelector('.inputAlarmTimeHour');
+    let inputAlarmTimeMinutes = document.querySelector('.inputAlarmTimeMinutes');
+    let alarmsBody = document.querySelector('.alarmsBody');
+    console.log("updateAlarm function triggered");
+
+    // Create new alarm card object in array
+    // i.e. extract the values from inputAlarmTimeHour and inputAlarmTimeMinutes as well as an if statement for whether AM or PM style.display is white (i.e. selected)
+    // Update alarm in array of objects
+    updateAlarmObject(currentAlarmCardIndex, inputAlarmTimeHour.value, inputAlarmTimeMinutes.value, checkTimePeriod());
+
+    // Remove all existing alarm cards, then show new alarm card on screen by re-loading the entire DOM of the alarm cards in the array of objects)
+    alarmsBody.innerHTML = "";
+    document.addEventListener('DOMContentLoaded', loadAlarms());
+
+    // Turn all active alarms on
+    loadActiveAlarms();
+
+    // Hide modal card
+    hideModalCard();
+
+    // Hide overlay
+    hideOverlay();
+        
+});
+
 
 // Initial page load of alarm objects in array 
 // document.addEventListener('DOMContentLoaded', loadAlarms());

@@ -1,6 +1,7 @@
 import { loadActivatedAlarm } from './DOMload.js'
 import { stopActivatedAlarm } from './eventListeners.js'
 import { loadAlarms} from './DOMload.js'
+import { updateTimeHour, updateTimeMinutes, updateTimePeriod } from './DOMchanges.js'
 
 // Create an array of objects to store alarm data. Note that
 // an example alarm object is included in the array so that an initial alarm is shown
@@ -145,6 +146,22 @@ setInterval(() => {
 
 },1000);
 
+// Update alarm object
+function updateAlarmObject(index, updatedHour, updatedMinutes, updatedPeriod) {
+    allAlarms[index].hours = updatedHour;
+    allAlarms[index].minutes = updatedMinutes;
+    allAlarms[index].period = updatedPeriod;
+
+    console.log(allAlarms[index].minutes);
+    console.log("updateAlarmObject runs!");
+
+}
+
+function findAlarmObjectIndex(el) {
+    let index = el.parentElement.parentElement.dataset.value
+    return index;
+}
+
 
 
 // TO DO
@@ -154,4 +171,4 @@ setInterval(() => {
 
 
 
-export { allAlarms, createAlarm, checkTimePeriod, deleteAlarmObject, activeFalse, activeTrue, loadActiveAlarms, loadOnBtns, sound } 
+export { allAlarms, createAlarm, checkTimePeriod, deleteAlarmObject, activeFalse, activeTrue, loadActiveAlarms, loadOnBtns, sound, updateAlarmObject, findAlarmObjectIndex } 

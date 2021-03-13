@@ -815,6 +815,14 @@ background-image: linear-gradient(315deg, #485461 0%, #28313b 74%); */
 }
 
 .ok {
+    display: flex;
+    margin-right: 4rem;
+    color: rgb(10, 111, 226);
+    cursor: pointer;
+}
+
+.update {
+    display: none;
     margin-right: 4rem;
     color: rgb(10, 111, 226);
     cursor: pointer;

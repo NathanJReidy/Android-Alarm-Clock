@@ -153,6 +153,8 @@ function updateTimeHour(el) {
     let inputAlarmTimeHour = document.querySelector(".inputAlarmTimeHour");
     // Extracts the amount of hours from the element
     inputAlarmTimeHour.value = el.textContent.split(":")[0];
+
+    return inputAlarmTimeHour.value;
 }
 
 // Focuses text on minutes input
@@ -191,6 +193,8 @@ function updateTimeMinutes(el) {
     let inputAlarmTimeMinutes = document.querySelector(".inputAlarmTimeMinutes");
     // Extracts the double digit amount of minutes from the element
     inputAlarmTimeMinutes.value = el.textContent.split(":")[1].substring(0,2);
+
+    return inputAlarmTimeMinutes.value;
 }
 
 // Update modal alarm digital time display period (when the time div is clicked within the alarm card)
@@ -200,12 +204,16 @@ function updateTimePeriod(el) {
         showGrayAM();
         showGrayPM();
         showWhiteAM();
+
+        return "am";
     }
 
     else if (el.textContent.split(":")[1].substring(3) == "pm") {
         showGrayAM();
         showGrayPM();
         showWhitePM();
+
+        return "pm";
     }
 }
 
