@@ -146,7 +146,13 @@ function hideModalCard() {
 function updateHour(el) {
     let inputAlarmTimeHour = document.querySelector(".inputAlarmTimeHour");
     inputAlarmTimeHour.value = el.textContent;
+}
 
+// Update modal alarm digital time display (when the time hours div is clicked within the alarm card)
+function updateTimeHour(el) {
+    let inputAlarmTimeHour = document.querySelector(".inputAlarmTimeHour");
+    // Extracts the amount of hours from the element
+    inputAlarmTimeHour.value = el.textContent.split(":")[0];
 }
 
 // Focuses text on minutes input
@@ -174,13 +180,33 @@ function hideHoursClock() {
 }
 
 
-
-
 // Update modal alarm digital time display (when a minutes is clicked)
 function updateMinutes(el) {
     let inputAlarmTimeMinutes = document.querySelector(".inputAlarmTimeMinutes");
     inputAlarmTimeMinutes.value = el.textContent;
+}
 
+// Update modal alarm digital time display (when the time minutes div is clicked within the alarm card)
+function updateTimeMinutes(el) {
+    let inputAlarmTimeMinutes = document.querySelector(".inputAlarmTimeMinutes");
+    // Extracts the double digit amount of minutes from the element
+    inputAlarmTimeMinutes.value = el.textContent.split(":")[1].substring(0,2);
+}
+
+// Update modal alarm digital time display period (when the time div is clicked within the alarm card)
+function updateTimePeriod(el) {
+    // Conditional extract is on am or pm part of the element's string
+    if (el.textContent.split(":")[1].substring(3) == "am") {
+        showGrayAM();
+        showGrayPM();
+        showWhiteAM();
+    }
+
+    else if (el.textContent.split(":")[1].substring(3) == "pm") {
+        showGrayAM();
+        showGrayPM();
+        showWhitePM();
+    }
 }
 
 
@@ -223,5 +249,4 @@ function showGrayAM() {
 }
 
 
-
-export { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, hideExtendedCard, showAlarmCardBorder, deleteAlarmCard, showOverlay, hideOverlay, hideDownIcon, showDownIcon, showModalCard, hideModalCard, showHoursClock, hideHoursClock, showMinutesClock, hideMinutesClock, updateHour, focusMinutes, updateMinutes, showWhiteAM, showGrayPM, showWhitePM, showGrayAM }
+export { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, hideExtendedCard, showAlarmCardBorder, deleteAlarmCard, showOverlay, hideOverlay, hideDownIcon, showDownIcon, showModalCard, hideModalCard, showHoursClock, hideHoursClock, showMinutesClock, hideMinutesClock, updateHour, focusMinutes, updateMinutes, showWhiteAM, showGrayPM, showWhitePM, showGrayAM, updateTimeMinutes, updateTimeHour, updateTimePeriod }

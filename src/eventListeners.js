@@ -1,4 +1,4 @@
-import { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, hideExtendedCard, showAlarmCardBorder, deleteAlarmCard, showOverlay, hideOverlay, hideDownIcon, showDownIcon, showModalCard, hideModalCard, showHoursClock, hideHoursClock, showMinutesClock, hideMinutesClock, updateHour, focusMinutes, updateMinutes, showWhiteAM, showGrayPM, showWhitePM, showGrayAM } from './DOMchanges.js'
+import { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, hideExtendedCard, showAlarmCardBorder, deleteAlarmCard, showOverlay, hideOverlay, hideDownIcon, showDownIcon, showModalCard, hideModalCard, showHoursClock, hideHoursClock, showMinutesClock, hideMinutesClock, updateHour, focusMinutes, updateMinutes, showWhiteAM, showGrayPM, showWhitePM, showGrayAM, updateTimeMinutes, updateTimeHour, updateTimePeriod } from './DOMchanges.js'
 import { createAlarm, checkTimePeriod, deleteAlarmObject, activeFalse, activeTrue, loadActiveAlarms, sound } from './logic.js'
 import { loadAlarms } from './DOMload.js'
 
@@ -77,6 +77,24 @@ alarmsBody.addEventListener("click", (e) => {
 
         // Delete alarm card from screen 
         deleteAlarmCard(element);
+
+    }
+
+    // Event listener for updating the alarm time when clicked
+    else if (element.classList.contains('time')) {
+        // Show overlay
+        showOverlay();
+
+        // Show modal
+        showModalCard();
+
+        // Show correct time and period on modal 
+        updateTimeHour(element);
+        updateTimeMinutes(element);
+        updateTimePeriod(element);
+
+        // Update alarm clock in object array and re-load DOM
+
 
     }
 
