@@ -490,10 +490,10 @@ background-image: linear-gradient(315deg, #485461 0%, #28313b 74%); */
     display: none;
     position: fixed;
     z-index: 30;
-    left: 10%;
-    top: 16%;
-    height: 55%;
-    width: 80%;
+    left: 3%;
+    top: 1.5%;
+    height: 87%;
+    width: 94%;
     background-color: rgb(32, 32, 32);
 }
 
@@ -543,6 +543,7 @@ background-image: linear-gradient(315deg, #485461 0%, #28313b 74%); */
     resize: none;
     text-align: center;
     overflow: hidden;
+    padding-top: 2.25rem;
 
 }
 
@@ -574,6 +575,7 @@ background-image: linear-gradient(315deg, #485461 0%, #28313b 74%); */
     font-size: xx-large;
     resize: none;
     overflow: hidden;
+    padding-top: 2.25rem;
 }
 
 .time {
