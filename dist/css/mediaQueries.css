@@ -1,0 +1,82 @@
+@media (min-width: 1280px) {
+    body {
+
+        height: 100%;
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        overflow-y: auto;
+        
+        
+    }
+
+    .main {
+
+
+        display: flex;
+        flex-direction: column;
+        margin-right: 20%;
+        margin-left: 20%;
+
+
+
+    }
+
+    .alarmsBody {
+        /* overflow-y: scroll; */
+        margin: 0;
+        margin-top: 4rem;
+
+    }
+
+
+    #iconText {
+        display: none;
+    }
+
+
+    .footerBar {
+        position: fixed;
+        /* justify-content: space-between;
+        align-items: center; */
+        /* background-color: rgb(46, 46, 46); */
+        border-top: 1px solid rgb(87, 75, 75);
+        height: 10%;
+        width: 100%;
+        bottom: 0%;
+
+        z-index: 50;
+        background-color: rgb(31, 27, 27);
+
+    }
+
+    .flexFooterContainer {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        padding-right: 20%;
+        padding-left: 20%;
+        padding-top: 0.5rem;
+        padding-bottom: 0rem;
+        justify-content: space-around;
+        z-index: 50;
+    }
+
+    .modalFixed {
+        display: none;
+        position: fixed;
+        z-index: 30;
+        left: 20%;
+        top: 16%;
+        height: 55%;
+        width: 60%;
+        background-color: rgb(32, 32, 32);
+    }
+
+
+
+
+}

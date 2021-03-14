@@ -49,11 +49,6 @@ function checkTimePeriod() {
     }
 }
 
-// Function to update alarm object/array with new time
-
-
-// 
-
 // Change active string to false 
 function activeFalse(el) {
     let index = el.parentElement.parentElement.parentElement.dataset.value;
@@ -112,7 +107,8 @@ function runAlarm() {
         let hours = (date.getHours() + 24) % 12 || 12;
         let minutes = date.getMinutes();
         // Choose correct time period (am or pm)
-        let period = hours < 12 ? 'am' : 'pm';
+        let period = (date.getHours()) < 12 ? 'am' : 'pm';
+
         // Change single digit minutes to double digit minutes
         if (minutes < 10) {
             minutes = `0${minutes}`
@@ -174,7 +170,7 @@ function findAlarmObjectIndex(el) {
 
 // 3. FIX DESKTOP DESIGN (ADD MEDIA QUERIES)
 // Add local storage
-// Add logic for only typing 2 numbers in input box
+
 
 
 export { allAlarms, createAlarm, checkTimePeriod, deleteAlarmObject, activeFalse, activeTrue, loadActiveAlarms, loadOnBtns, sound, updateAlarmObject, findAlarmObjectIndex } 

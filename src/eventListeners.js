@@ -272,6 +272,7 @@ ok.addEventListener("click", () => {
 
     
     // Add new alarm to array of objects
+
     createAlarm(inputAlarmTimeHour.value, inputAlarmTimeMinutes.value, checkTimePeriod());
 
     // Remove all existing alarm cards, then show new alarm card on screen by re-loading the entire DOM of the alarm cards in the array of objects)
