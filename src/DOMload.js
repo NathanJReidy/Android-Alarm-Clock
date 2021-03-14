@@ -1,7 +1,11 @@
-import { allAlarms } from './logic.js'
+import { getAlarms } from './localStorage.js';
+import { loadActiveAlarms } from './logic.js'
 
 // Load alarms from array of objects 
 function loadAlarms() {
+
+    const allAlarms = getAlarms();
+
     allAlarms.forEach((alarm, index) => {
         
         const alarmsBody = document.querySelector('.alarmsBody');
@@ -39,9 +43,12 @@ function loadAlarms() {
         `
 
         alarmsBody.appendChild(alarmCard);
-        
+      
 
     })
+
+    // Show correct display of on/off buttons
+    loadActiveAlarms();
 
 }
 

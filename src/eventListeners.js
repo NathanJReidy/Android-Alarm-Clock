@@ -1,5 +1,5 @@
 import { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, hideExtendedCard, showAlarmCardBorder, deleteAlarmCard, showOverlay, hideOverlay, hideDownIcon, showDownIcon, showModalCard, hideModalCard, showHoursClock, hideHoursClock, showMinutesClock, hideMinutesClock, updateHour, focusMinutes, updateMinutes, showWhiteAM, showGrayPM, showWhitePM, showGrayAM, updateTimeMinutes, updateTimeHour, updateTimePeriod } from './DOMchanges.js'
-import { createAlarm, checkTimePeriod, deleteAlarmObject, activeFalse, activeTrue, loadActiveAlarms, sound, updateAlarmObject, findAlarmObjectIndex, allAlarms } from './logic.js'
+import { createAlarm, checkTimePeriod, deleteAlarmObject, activeFalse, activeTrue, loadActiveAlarms, sound, updateAlarmObject, findAlarmObjectIndex } from './logic.js'
 import { loadAlarms } from './DOMload.js'
 
 let ok = document.querySelector(".ok");
@@ -341,6 +341,8 @@ function stopActivatedAlarm() {
 
         // Stops alarm sound from playing
         sound.pause();
+
+        console.log("dismiss btn listener clicked");
 
     })
 }
