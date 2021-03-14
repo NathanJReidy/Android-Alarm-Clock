@@ -86,6 +86,58 @@
         z-index: 50;
     }
 
+    .inputAlarmTimeHour {
+        display: flex;
+        flex-direction: row;
+        background-color: inherit;
+        outline: none;
+        height: 100%;
+        color: grey;
+        width: 3rem;
+        font-size: inherit;
+        align-items: center;
+        border: none;
+        font-size: xx-large;
+        resize: none;
+        text-align: center;
+        overflow: hidden;
+        padding-top: 1rem;
+    
+    }
+    
+    .semiColon {
+        /* display: flex;
+        flex-direction: row; */
+        /* height: 100%; */
+        padding-right: 0.75rem;
+        padding-left: 0.25rem;
+        font-size: xx-large;
+        padding-top: 1rem;
+        /* margin-top: 0.25rem; */
+        /* margin: 0; */
+        /* margin-top: 1rem; */
+        /* align-items: flex-end; */
+    
+    
+    }
+    
+    .inputAlarmTimeMinutes {
+        display: flex;
+        flex-direction: row;
+        background-color: inherit;
+        outline: none;
+        height: 100%;
+        color: grey;
+        width: 3.5rem;
+        font-size: inherit;
+        align-items: center;
+        border: none;
+        font-size: xx-large;
+        resize: none;
+        overflow: hidden;
+        padding-top: 1rem;
+    }
+
 
 
 
