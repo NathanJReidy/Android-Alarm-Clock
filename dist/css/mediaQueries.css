@@ -76,7 +76,15 @@
         background-color: rgb(32, 32, 32);
     }
 
-
+    .activatedAlarmFixed {
+        position: fixed;
+        height: 20%;
+        width: 60%;
+        right: 20%;
+        top: 1.5%;
+        background-color: whitesmoke;
+        z-index: 50;
+    }
 
 
 }
