@@ -1,10 +1,10 @@
-import { getAlarms } from './localStorage.js';
-import { loadActiveAlarms } from './logic.js'
+import { loadActiveAlarms, allAlarms } from './logic.js'
+
 
 // Load alarms from array of objects 
 function loadAlarms() {
 
-    const allAlarms = getAlarms();
+
 
     allAlarms.forEach((alarm, index) => {
         

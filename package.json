@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -16,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/NathanJReidy/Android-Alarm-Clock/issues"
   },
-  "homepage": "https://github.com/NathanJReidy/Android-Alarm-Clock#readme",
+  "homepage": "https://nathanjreidy.github.io/Android-Alarm-Clock/",
   "devDependencies": {
     "webpack": "^5.25.0",
     "webpack-cli": "^4.5.0"

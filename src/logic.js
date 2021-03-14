@@ -2,22 +2,21 @@ import { loadActivatedAlarm } from './DOMload.js'
 import { stopActivatedAlarm } from './eventListeners.js'
 import { loadAlarms} from './DOMload.js'
 import { updateTimeHour, updateTimeMinutes, updateTimePeriod } from './DOMchanges.js'
-import { getAlarms } from './localStorage.js'
 
 // Create an array of objects to store alarm data. Note that
 // an example alarm object is included in the array so that an initial alarm is shown
 // (for illustrative purposes only)
-// let allAlarms = [
-//     {
-//     "hours": "10",
-//     "minutes": "45",
-//     "period": "am",
-//     "active": false,
-//     },
-// ];
+let allAlarms = [
+    {
+    "hours": "10",
+    "minutes": "45",
+    "period": "am",
+    "active": false,
+    },
+];
 
 function createAlarm(hours, minutes, period) {
-    const allAlarms = getAlarms();
+    // const allAlarms = getAlarms();
     
     allAlarms.push({
         hours,
@@ -26,16 +25,16 @@ function createAlarm(hours, minutes, period) {
         active: true,
     })
 
-    localStorage.setItem('allAlarms', JSON.stringify(allAlarms));
+    // sessionStorage.setItem('allAlarms', JSON.stringify(allAlarms));
 }
 
 function deleteAlarmObject(el) {
-    const allAlarms = getAlarms();
+    // const allAlarms = getAlarms();
     
     let index = el.parentElement.parentElement.parentElement.dataset.value;
     allAlarms.splice(index, 1);
 
-    localStorage.setItem('allAlarms', JSON.stringify(allAlarms));
+    // sessionStorage.setItem('allAlarms', JSON.stringify(allAlarms));
 }
 
 
@@ -60,26 +59,26 @@ function checkTimePeriod() {
 
 // Change active string to false 
 function activeFalse(el) {
-    const allAlarms = getAlarms();
+    // const allAlarms = getAlarms();
 
     let index = el.parentElement.parentElement.parentElement.dataset.value;
     allAlarms[index].active = false;
 
-    localStorage.setItem('allAlarms', JSON.stringify(allAlarms));
+    // sessionStorage.setItem('allAlarms', JSON.stringify(allAlarms));
 }
 
 // Change active string to true 
 function activeTrue(el) {
-    const allAlarms = getAlarms();
+    // const allAlarms = getAlarms();
 
     let index = el.parentElement.parentElement.parentElement.dataset.value;
     allAlarms[index].active = true;
 
-    localStorage.setItem('allAlarms', JSON.stringify(allAlarms));
+    // sessionStorage.setItem('allAlarms', JSON.stringify(allAlarms));
 }
 
 function loadActiveAlarms() {
-    const allAlarms = getAlarms();
+    // const allAlarms = getAlarms();
 
     allAlarms.forEach((alarm, index) => {
         if (alarm.active === true) {
@@ -140,7 +139,7 @@ function runAlarm() {
         let currentTime = `${hours}:${minutes}${period}`;
         console.log(`currentTime is ${currentTime}`);
 
-        const allAlarms = getAlarms();
+        // const allAlarms = getAlarms();
     
         allAlarms.forEach((alarm, index) => {
             if (alarm.active === true) {
@@ -158,7 +157,7 @@ function runAlarm() {
     
                     // Turn alarm off by setting active to false in object
                     alarm.active = false;
-                    localStorage.setItem('allAlarms', JSON.stringify(allAlarms));
+                    // sessionStorage.setItem('allAlarms', JSON.stringify(allAlarms));
     
                     // Turn alarm card off by re-loading the DOM so that the alarm btn, text etc turn gray again (i.e. shows the alarm is off)
                     loadActiveAlarms();
@@ -176,7 +175,7 @@ runAlarm();
 
 // Update alarm object
 function updateAlarmObject(index, updatedHour, updatedMinutes, updatedPeriod) {
-    const allAlarms = getAlarms();
+    // const allAlarms = getAlarms();
 
     allAlarms[index].hours = updatedHour;
     allAlarms[index].minutes = updatedMinutes;
@@ -185,7 +184,7 @@ function updateAlarmObject(index, updatedHour, updatedMinutes, updatedPeriod) {
     console.log(allAlarms[index].minutes);
     console.log("updateAlarmObject runs!");
 
-    localStorage.setItem('allAlarms', JSON.stringify(allAlarms));
+    // sessionStorage.setItem('allAlarms', JSON.stringify(allAlarms));
 
 }
 
@@ -202,4 +201,4 @@ function findAlarmObjectIndex(el) {
 
 
 
-export { createAlarm, checkTimePeriod, deleteAlarmObject, activeFalse, activeTrue, loadActiveAlarms, loadOnBtns, sound, updateAlarmObject, findAlarmObjectIndex } 
+export { allAlarms, createAlarm, checkTimePeriod, deleteAlarmObject, activeFalse, activeTrue, loadActiveAlarms, loadOnBtns, sound, updateAlarmObject, findAlarmObjectIndex } 
