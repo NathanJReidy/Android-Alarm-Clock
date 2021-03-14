@@ -146,8 +146,21 @@
         /* height: 100%; */
         margin: 0;
         font-size: small;
+        margin-top: 1rem;
         /* margin-bottom: 0.75rem; */
         /* padding-bottom: 3.5rem;  */
+    }
+
+    .alarmTimeWrapper {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        width: 40%;
+        align-content: center;
+        justify-content: center;
+        margin-right: 0.25rem;
+        margin-top: 0.25rem;
+        margin-left: 2rem;
     }
 
 
