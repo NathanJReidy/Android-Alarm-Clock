@@ -86,37 +86,6 @@
         z-index: 50;
     }
 
-    .inputAlarmTimeHour {
-        display: flex;
-        flex-direction: row;
-        background-color: inherit;
-        outline: none;
-        height: 100%;
-        color: grey;
-        width: 3rem;
-        font-size: inherit;
-        align-items: center;
-        border: none;
-        font-size: xx-large;
-        resize: none;
-        text-align: center;
-    
-    }
-
-    .inputAlarmTimeMinutes {
-        display: flex;
-        flex-direction: row;
-        background-color: inherit;
-        outline: none;
-        height: 100%;
-        color: grey;
-        width: 3.5rem;
-        font-size: inherit;
-        align-items: center;
-        border: none;
-        font-size: xx-large;
-        resize: none;
-    }
 
 
 }

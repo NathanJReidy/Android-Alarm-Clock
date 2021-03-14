@@ -542,6 +542,7 @@ background-image: linear-gradient(315deg, #485461 0%, #28313b 74%); */
     font-size: xx-large;
     resize: none;
     text-align: center;
+    overflow: hidden;
 
 }
 
@@ -572,6 +573,7 @@ background-image: linear-gradient(315deg, #485461 0%, #28313b 74%); */
     border: none;
     font-size: xx-large;
     resize: none;
+    overflow: hidden;
 }
 
 .time {
