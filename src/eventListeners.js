@@ -272,21 +272,24 @@ ok.addEventListener("click", () => {
 
     
     // Add new alarm to array of objects
+    if (inputAlarmTimeHour.value != "" && inputAlarmTimeMinutes.value != "") {
+        createAlarm(inputAlarmTimeHour.value, inputAlarmTimeMinutes.value, checkTimePeriod());
 
-    createAlarm(inputAlarmTimeHour.value, inputAlarmTimeMinutes.value, checkTimePeriod());
+        // Remove all existing alarm cards, then show new alarm card on screen by re-loading the entire DOM of the alarm cards in the array of objects)
+        alarmsBody.innerHTML = "";
+        document.addEventListener('DOMContentLoaded', loadAlarms());
 
-    // Remove all existing alarm cards, then show new alarm card on screen by re-loading the entire DOM of the alarm cards in the array of objects)
-    alarmsBody.innerHTML = "";
-    document.addEventListener('DOMContentLoaded', loadAlarms());
+        // Turn all active alarms on
+        loadActiveAlarms();
 
-    // Turn all active alarms on
-    loadActiveAlarms();
+        // Hide modal card
+        hideModalCard();
 
-    // Hide modal card
-    hideModalCard();
+        // Hide overlay
+        hideOverlay();
+    }
 
-    // Hide overlay
-    hideOverlay();
+
 })
 
 
@@ -299,21 +302,24 @@ update.addEventListener('click', () => {
     // Create new alarm card object in array
     // i.e. extract the values from inputAlarmTimeHour and inputAlarmTimeMinutes as well as an if statement for whether AM or PM style.display is white (i.e. selected)
     // Update alarm in array of objects
-    updateAlarmObject(currentAlarmCardIndex, inputAlarmTimeHour.value, inputAlarmTimeMinutes.value, checkTimePeriod());
+    if (inputAlarmTimeHour.value != "" && inputAlarmTimeMinutes.value != "") {
+        updateAlarmObject(currentAlarmCardIndex, inputAlarmTimeHour.value, inputAlarmTimeMinutes.value, checkTimePeriod());
 
-    // Remove all existing alarm cards, then show new alarm card on screen by re-loading the entire DOM of the alarm cards in the array of objects)
-    alarmsBody.innerHTML = "";
-    document.addEventListener('DOMContentLoaded', loadAlarms());
+        // Remove all existing alarm cards, then show new alarm card on screen by re-loading the entire DOM of the alarm cards in the array of objects)
+        alarmsBody.innerHTML = "";
+        document.addEventListener('DOMContentLoaded', loadAlarms());
 
-    // Turn all active alarms on
-    loadActiveAlarms();
+        // Turn all active alarms on
+        loadActiveAlarms();
 
-    // Hide modal card
-    hideModalCard();
+        // Hide modal card
+        hideModalCard();
 
-    // Hide overlay
-    hideOverlay();
-        
+        // Hide overlay
+        hideOverlay();
+
+    }
+    
 });
 
 
