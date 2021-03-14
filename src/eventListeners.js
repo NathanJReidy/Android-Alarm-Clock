@@ -1,10 +1,13 @@
 import { showBlueTime, showBlueOnBtn, showWhiteAlarmDay, hideBlueTime, hideBlueOnBtn, hideWhiteAlarmDay, showExtendedCard, hideAlarmCardBorder, hideExtendedCard, showAlarmCardBorder, deleteAlarmCard, showOverlay, hideOverlay, hideDownIcon, showDownIcon, showModalCard, hideModalCard, showHoursClock, hideHoursClock, showMinutesClock, hideMinutesClock, updateHour, focusMinutes, updateMinutes, showWhiteAM, showGrayPM, showWhitePM, showGrayAM, updateTimeMinutes, updateTimeHour, updateTimePeriod } from './DOMchanges.js'
-import { createAlarm, checkTimePeriod, deleteAlarmObject, activeFalse, activeTrue, loadActiveAlarms, sound, updateAlarmObject, findAlarmObjectIndex } from './logic.js'
+import { createAlarm, checkTimePeriod, deleteAlarmObject, activeFalse, activeTrue, loadActiveAlarms, sound, updateAlarmObject, findAlarmObjectIndex, allAlarms } from './logic.js'
 import { loadAlarms } from './DOMload.js'
 
 let ok = document.querySelector(".ok");
 let update = document.querySelector(".update");
 let currentAlarmCardIndex = null;
+let am = document.querySelector('.am');
+
+
 
 
 // CORRECT Event listener for off button (i.e. when clicked it turns on)
@@ -137,12 +140,10 @@ addAlarmBtn.addEventListener("click", () => {
     update.style.display = 'none';
     ok.style.display = 'flex';
 
-    // Run add new alarm event listener
-    // okEventListener("Add");
-    // ok.addEventListener("click", addAlarm("Add"));
-
 
 })
+
+
 
 // Event listener for closing overlay when it is clicked
 let overlay = document.querySelector(".overlay");
@@ -169,9 +170,7 @@ inputAlarmTimeHour.addEventListener("click", () => {
 
 // If user enters invalid alarm time hours, remove their incorrect characters
 inputAlarmTimeHour.addEventListener("keyup", () => {
-    console.log((inputAlarmTimeHour.value[0]));
-    
-    if (parseInt(inputAlarmTimeHour.value) > 12 || parseInt(inputAlarmTimeHour.value[0]) == 0 || inputAlarmTimeHour.value.match(/^[a-zA-Z]+$/) || inputAlarmTimeHour.value.match(/[!@#$%^&*()_+\-=\[\]{};':"`~\\|,.<>\/?]/)) {
+    if (parseInt(inputAlarmTimeHour.value) > 12 || parseInt(inputAlarmTimeHour.value[0]) == 0 || inputAlarmTimeHour.value.match(/[a-zA-Z]+/) || inputAlarmTimeHour.value.match(/[!@#$%^&*()_+\-=\[\]{};':"`~\\|,.<>\/?]/)) {
         inputAlarmTimeHour.value = "";
     }
 }
@@ -215,13 +214,18 @@ inputAlarmTimeMinutes.addEventListener("click", () => {
     hideHoursClock();
 })
 
-
-
+// If user enters invalid alarm time minutes, remove their incorrect characters
+inputAlarmTimeMinutes.addEventListener("keyup", () => {
+    if (parseInt(inputAlarmTimeMinutes.value) > 59 || inputAlarmTimeMinutes.value.match(/[a-zA-Z]+/) || inputAlarmTimeMinutes.value.match(/[!@#$%^&*()_+\-=\[\]{};':"`~\\|,.<>\/?]/)) {
+        inputAlarmTimeMinutes.value = "";
+    }
+}
+)
 
 
 
 // Event listener for period div (am)
-let am = document.querySelector(".am");
+// let am = document.querySelector(".am");
 am.addEventListener("click", () => {
     // Change AM text colour to white
     showWhiteAM();

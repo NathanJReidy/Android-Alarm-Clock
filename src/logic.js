@@ -43,6 +43,10 @@ function checkTimePeriod() {
     if (pm.style.color == "white") {
         return "pm"
     }
+
+    else {
+        return "am"
+    }
 }
 
 // Function to update alarm object/array with new time
