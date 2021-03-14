@@ -101,7 +101,7 @@
         resize: none;
         text-align: center;
         overflow: hidden;
-        padding-top: 1rem;
+        padding-top: 0.75rem;
     
     }
     
@@ -134,7 +134,7 @@
         font-size: xx-large;
         resize: none;
         overflow: hidden;
-        padding-top: 1rem;
+        padding-top: 0.75rem;
     }
 
     .timePeriod {
@@ -146,7 +146,7 @@
         /* height: 100%; */
         margin: 0;
         font-size: small;
-        margin-bottom: 0.75rem;
+        /* margin-bottom: 0.75rem; */
         /* padding-bottom: 3.5rem;  */
     }
 
