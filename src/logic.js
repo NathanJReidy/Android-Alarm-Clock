@@ -101,50 +101,52 @@ sound.loop = true;
 // document.addEventListener('DOMContentLoaded', loadAlarms());
 loadAlarms();
 
-// alarmTriggered = false; 
-setInterval(() => {
-    let date = new Date();
-    let hours = Math.abs(12 - (date.getHours()));
-	let minutes = date.getMinutes();
-    let period = (date.getHours()) < 12 ? 'am' : 'pm';
-    
-
-	//convert 24hr time to standard 12hr time
-	// if (hours == 00) {
-	// 	hours = 12;
-    // } 
-
-    // The below doesn't work for 00 minutes or 00 hours
-
-    let currentTime = `${hours}:${minutes}${period}`;
-    
-    console.log(`currentTime is ${currentTime}`);
-
-    allAlarms.forEach((alarm, index) => {
-        if (alarm.active === true) {
-            let alarmTime = `${alarm.hours}:${alarm.minutes}${alarm.period}`;
-            console.log(`alarmTime is ${alarmTime}`);
-            if (alarmTime == currentTime) {
-                // Play alarm sound
-                sound.play();
-                // Load activated alarm card
-                loadActivatedAlarm(alarm);
-                console.log("Alarm went off!");
-
-                // Turn off alarm when dismiss button is clicked
-                stopActivatedAlarm();
-
-                // Turn alarm off by setting active to false in object
-                alarm.active = false;
-
-                // Turn alarm card off by re-loading the DOM so that the alarm btn, text etc turn gray again (i.e. shows the alarm is off)
-                loadActiveAlarms();
-
-            }
+function runAlarm() {
+    setInterval(() => {
+        let date = new Date();
+        // Change hours from 24 hr time to 12 hr time
+        let hours = (date.getHours() + 24) % 12 || 12;
+        let minutes = date.getMinutes();
+        // Choose correct time period (am or pm)
+        let period = hours < 12 ? 'am' : 'pm';
+        // Change single digit minutes to double digit minutes
+        if (minutes < 10) {
+            minutes = `0${minutes}`
         }
-    })
+        
+        let currentTime = `${hours}:${minutes}${period}`;
+        console.log(`currentTime is ${currentTime}`);
+    
+        allAlarms.forEach((alarm, index) => {
+            if (alarm.active === true) {
+                let alarmTime = `${alarm.hours}:${alarm.minutes}${alarm.period}`;
+                console.log(`alarmTime is ${alarmTime}`);
+                if (alarmTime == currentTime) {
+                    // Play alarm sound
+                    sound.play();
+                    // Load activated alarm card
+                    loadActivatedAlarm(alarm);
+                    console.log("Alarm went off!");
+    
+                    // Turn off alarm when dismiss button is clicked
+                    stopActivatedAlarm();
+    
+                    // Turn alarm off by setting active to false in object
+                    alarm.active = false;
+    
+                    // Turn alarm card off by re-loading the DOM so that the alarm btn, text etc turn gray again (i.e. shows the alarm is off)
+                    loadActiveAlarms();
+    
+                }
+            }
+        })
+    
+    },1000);
+}
 
-},1000);
+// Run the Alarm
+runAlarm();
+
 
 // Update alarm object
 function updateAlarmObject(index, updatedHour, updatedMinutes, updatedPeriod) {
@@ -165,10 +167,10 @@ function findAlarmObjectIndex(el) {
 
 
 // TO DO
-// 1. ADD FUNCTIONALITY TO UPDATE ALARM BY CLICKING ON EACH CARD'S ALARM TIME
-// 2. FIX THE 00 HOURS & 00 MINUTE ERROR WHEN RUNNING SET INTERVAL (I.E. WHEN ALARM IS ACTIVATED)
-// 3. FIX DESKTOP DESIGN (ADD MEDIA QUERIES)
 
+// 3. FIX DESKTOP DESIGN (ADD MEDIA QUERIES)
+// Add local storage
+// Add logic for only typing 2 numbers in input box
 
 
 export { allAlarms, createAlarm, checkTimePeriod, deleteAlarmObject, activeFalse, activeTrue, loadActiveAlarms, loadOnBtns, sound, updateAlarmObject, findAlarmObjectIndex } 

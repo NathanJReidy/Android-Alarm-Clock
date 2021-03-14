@@ -167,6 +167,16 @@ inputAlarmTimeHour.addEventListener("click", () => {
     hideMinutesClock();
 })
 
+// If user enters invalid alarm time hours, remove their incorrect characters
+inputAlarmTimeHour.addEventListener("keyup", () => {
+    console.log((inputAlarmTimeHour.value[0]));
+    
+    if (parseInt(inputAlarmTimeHour.value) > 12 || parseInt(inputAlarmTimeHour.value[0]) == 0 || inputAlarmTimeHour.value.match(/^[a-zA-Z]+$/) || inputAlarmTimeHour.value.match(/[!@#$%^&*()_+\-=\[\]{};':"`~\\|,.<>\/?]/)) {
+        inputAlarmTimeHour.value = "";
+    }
+}
+)
+
 
 // Event listener for each of the numbers 1-12 & 00-55. 
 let modalFixed = document.querySelector('.modalFixed');
