@@ -8,7 +8,7 @@ function getAlarms() {
         },
     ];
 
-    localStorage.setItem('allAlarms', JSON.stringify(allAlarms));
+    // localStorage.setItem('allAlarms', JSON.stringify(allAlarms));
 
     if (localStorage.getItem('allAlarms') === null) {
         allAlarms = [];
