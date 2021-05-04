@@ -54,6 +54,10 @@ let alarmsBody = document.querySelector(".alarmsBody");
 alarmsBody.addEventListener("click", (e) => {
   let element = e.target;
 
+  // Fake play then pause the sound button for the alarm. WHY? Because we want to get around iOS and Android sound policy. Sound (on iOS and Android) must be triggered by a user click.
+  sound.play();
+  sound.pause();
+
   // Event listener to show blue button
   if (element.classList.contains("roundSliderGray")) {
     // Function that shows blue on btn
