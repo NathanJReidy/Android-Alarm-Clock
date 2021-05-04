@@ -484,7 +484,7 @@ background-image: linear-gradient(315deg, #485461 0%, #28313b 74%); */
   display: flex;
   flex-direction: row;
   height: 100%;
-  width: 40%;
+  width: 100%;
   align-content: center;
   justify-content: center;
   margin-right: 0.25rem;
@@ -498,13 +498,13 @@ background-image: linear-gradient(315deg, #485461 0%, #28313b 74%); */
   outline: none;
   height: 100%;
   color: grey;
-  width: 3rem;
+  width: 6rem;
   font-size: inherit;
   align-items: center;
   border: none;
   font-size: xx-large;
   resize: none;
-  text-align: center;
+  text-align: end;
   overflow: hidden;
   /* padding-top: 2.25rem; */
 }
@@ -513,10 +513,12 @@ background-image: linear-gradient(315deg, #485461 0%, #28313b 74%); */
   display: flex;
   flex-direction: row;
   /* height: 100%; */
-  padding-right: 0.75rem;
+  padding-right: 0.25rem;
   padding-left: 0.25rem;
   font-size: xx-large;
   margin: 0;
+  margin-top: -0.25rem;
+
   /* margin-bottom: 0.5rem; */
   /* align-items: flex-start; */
 }
@@ -528,7 +530,7 @@ background-image: linear-gradient(315deg, #485461 0%, #28313b 74%); */
   outline: none;
   height: 100%;
   color: grey;
-  width: 3.5rem;
+  width: 6rem;
   font-size: inherit;
   align-items: center;
   border: none;
